@@ -6,8 +6,9 @@
   </head>
   <body>
     <form method="get" action="">
-      <input type="text" name="First"> <br />
-      <input type="text" name="Last"> 
+      <input type="text" name="First" placeholder="First"> <br />
+      <input type="text" name="Last" value="LAST">
+      <input type="submit" value="go">
     </form>
   </body>
 </html>
