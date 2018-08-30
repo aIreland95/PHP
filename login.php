@@ -19,9 +19,9 @@ $password = $_GET['Password'];
     </form>
 
 <?php
-echo "Username was " + $username;
+echo "Username was $username";
 echo "<br>";
-echo "Password was " + $password;
+echo "Password was $password";
 ?>
 
   </body>
