@@ -6,12 +6,12 @@
   </head>
 
 <?php
-$username = $_GET['Username'];
-$password = $_GET['Password'];
+$username = $_POST['Username'];
+$password = $_POST['Password'];
 ?>
 
   <body>
-    <form method="get" action="">
+    <form method="post" action="">
       <input type="text" name="Username" placeholder="Username"> <br />
       <input type="password" name="Password">
       <br>
@@ -19,9 +19,13 @@ $password = $_GET['Password'];
     </form>
 
 <?php
-echo "Username was $username";
-echo "<br>";
-echo "Password was $password";
+
+if (isset($username) && isset($password))
+{
+  echo "Username was $username";
+  echo "<br>";
+  echo "Password was $password";
+}
 ?>
 
   </body>
