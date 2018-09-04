@@ -17,6 +17,8 @@ $password = $_POST['Password'];
       <input type="password" name="Password">
       <br>
       <input type="submit" value="Go">
+      <br>
+      <input type="submit" name="Logout" value="logout">
     </form>
 
 <?php
