@@ -2,6 +2,12 @@
 session_start();
 require('dbconnection.php');
 
+if (isset($_POST['username'])) {
+  $username = $_POST['Username'];
+  $password = $_POST['Password'];
+
+  $sql = "SELECT username, password FROM users WHERE username = $username";
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +18,6 @@ require('dbconnection.php');
   </head>
 
 <?php
-$username = $_POST['Username'];
-$password = $_POST['Password'];
 
 if (isset($_POST['logout'])) {
   unset($_SESSION['username']);
