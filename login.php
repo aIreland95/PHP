@@ -3,8 +3,8 @@ session_start();
 require('dbconnection.php');
 
 if (isset($_POST['username'])) {
-  $username = $_POST['Username'];
-  $password = $_POST['Password'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
 // SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
   $sql = "SELECT username, password FROM users WHERE username = '$username'";
@@ -37,8 +37,8 @@ if (isset($_POST['logout'])) {
 
   <body>
     <form method="post" action="">
-      <input type="text" name="Username" placeholder="Username"> <br />
-      <input type="password" name="Password">
+      <input type="text" name="username" placeholder="username"> <br />
+      <input type="password" name="password">
       <br>
       <input type="submit" value="Go">
       <br>
