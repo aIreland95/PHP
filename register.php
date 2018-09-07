@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 require('dbconnection.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql = "INSERT INTO user (username, password) VALUES ('$username', '$password');"
+$sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
 $conn->query($sql);
 }
 ?>
@@ -14,7 +14,6 @@ $conn->query($sql);
     <title></title>
   </head>
   <body>
-    <h2>Registry Page</h2>
     <form method="post" action="">
       <input type="text" name="username"> </br>
       <input type="password" name="password"> </br>
