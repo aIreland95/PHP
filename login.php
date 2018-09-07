@@ -5,7 +5,7 @@ require('dbconnection.php');
 if (isset($_POST['username'])) {
   $username = $_POST['Username'];
   $password = $_POST['Password'];
-  
+
 // SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
   $sql = "SELECT username, password FROM users WHERE username = '$username'";
 
@@ -13,9 +13,7 @@ if (isset($_POST['username'])) {
   $result = $conn->query($sql);
 
 //Extracting the returned query information
-  while ($row as $result->fetch_assoc()) {
-
-    //$row['username'] is value from database
+  while ($row = $result->fetch_assoc()) {
     if ($username == $row['username'] && $password = $row['password']) {
       $_SESSION['username'] = $username;
     }
