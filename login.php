@@ -5,8 +5,9 @@ require('dbconnection.php');
 if (isset($_POST['username'])) {
   $username = $_POST['Username'];
   $password = $_POST['Password'];
-// SQL statement to execute
-  $sql = "SELECT username, password FROM users WHERE username = $username";
+  
+// SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
+  $sql = "SELECT username, password FROM users WHERE username = '$username'";
 
 // Execute the SQL and return array to $result
   $result = $conn->query($sql);
