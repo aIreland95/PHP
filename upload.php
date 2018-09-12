@@ -24,5 +24,5 @@ Upload your file.
 <form action="" method="post" enctype="multipart/form-data">
   <input type="file" name="upload">
   <br />
-  <input type="submit">
+  <input type="submit" name="Submit">
 </form>
