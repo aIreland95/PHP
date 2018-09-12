@@ -4,12 +4,20 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['username'])) {
-  header('login.php');
+  header('Location: login.php');
 }
 
-if (isset($_POST['upload'])) {
+var_dump($_POST['upload']);
+echo "<hr />";
+var_dump($_FILES['upload']);
+
+if (isset($_FILES['upload'])) {
+  
   $target_dir = "uploads/";
+  echo $target_dir . "<br>";
   $target_file = $tagret_dir . basename($_FILES['upload']['name']);
+  echo $target_file . "<br>";
+
   move_uploaded_file($_FILES['upload']['tmp_namr'], $target_file);
 }
 
