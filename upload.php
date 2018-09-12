@@ -12,15 +12,14 @@ echo "<hr />";
 var_dump($_FILES['upload']);
 
 if (isset($_FILES['upload'])) {
-  
+
   $target_dir = "uploads/";
   echo $target_dir . "<br>";
   $target_file = $tagret_dir . basename($_FILES['upload']['name']);
   echo $target_file . "<br>";
 
-  move_uploaded_file($_FILES['upload']['tmp_namr'], $target_file);
+  move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
 }
-
 
 ?>
 
