@@ -12,15 +12,22 @@ echo "<hr />";
 var_dump($_FILES['upload']);
 
 if (isset($_FILES['upload'])) {
-
   $target_dir = "uploads/";
-
   $target_file = $target_dir . basename($_FILES['upload']['name']);
-  echo $target_file;
+  $uploadVerify = true;
 
-  move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+  // Check to see if file already exists
+if file_exists($target_file)) {
+  $uploadVerify = false;
+  $ret = "Sorry, this file already exists...idiot.";
 }
 
+
+
+  if ($uploadVerify) {
+  move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+  }
+}
 ?>
 
 Upload your file.
@@ -29,4 +36,7 @@ Upload your file.
   <br />
   <input type="submit" name="Submit">
 </form>
- 
+
+<h3 style="color:red;">
+  <?php if ($ret) {echo $ret}; ?>
+</h3>
