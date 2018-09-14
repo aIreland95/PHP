@@ -38,5 +38,5 @@ Upload your file.
 </form>
 
 <h3 style="color:red;">
-  <?php if ($ret) {echo $ret}; ?>
+  <?php if ($ret) {echo $ret;} ?>
 </h3>
