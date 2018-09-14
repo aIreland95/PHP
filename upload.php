@@ -17,7 +17,7 @@ if (isset($_FILES['upload'])) {
   $uploadVerify = true;
 
   // Check to see if file already exists
-if file_exists($target_file) {
+if (file_exists($target_file)) {
   $uploadVerify = false;
   $ret = "Sorry, this file already exists...idiot.";
 }
