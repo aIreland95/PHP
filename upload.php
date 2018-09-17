@@ -21,6 +21,12 @@ if (file_exists($target_file)) {
   $uploadVerify = false;
   $ret = "Sorry, this file already exists...idiot.";
 }
+
+// Check file for type
+$finfo = finfo_open(FILEINFO_MIME_TYPES);
+$file_type = finfo_file($finfo, $_FILES['upload']['tmp_file']);
+echo $file_type;
+
 if ($_FILES['upload']['size'] > 2) {
   $uploadVerify = false;
   $ret = "Sorry, this file is too big...idiot.";
