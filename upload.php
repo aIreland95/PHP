@@ -19,17 +19,33 @@ if (isset($_FILES['upload'])) {
   // Check to see if file already exists
 if (file_exists($target_file)) {
   $uploadVerify = false;
-  $ret = "Sorry, this file already exists...idiot.";
+  $ret = "Sorry, this file already exists.";
 }
 
 // Check file for type
-$finfo = finfo_open(FILEINFO_MIME_TYPES);
-$file_type = finfo_file($finfo, $_FILES['upload']['tmp_file']);
-echo $file_type;
+$file_type = $_FILES['upload']['type'];
+switch ($file_type){
+    case "image/jpeg":
+        $uploadVerify = true;
+        break;
+    case "image/png":
+        $uploadVerfiy = true;
+        break;
+    case "image/gif":
+        $uploadVerfiy = true;
+        break;
+    case "application/pdf":
+        $uploadVerfiy = true;
+        break;
+    default:
+        $uploadVerify = false;
+        $ret = "Sorry, only jpeg, png, gif, and pdf files are allowed.";
+        break;
+}
 
-if ($_FILES['upload']['size'] > 2) {
+if ($_FILES['upload']['size'] > 200) {
   $uploadVerify = false;
-  $ret = "Sorry, this file is too big...idiot.";
+  $ret = "Sorry, this file is too big.";
 }
 
 
