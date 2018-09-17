@@ -43,7 +43,7 @@ switch ($file_type){
         break;
 }
 
-if ($_FILES['upload']['size'] > 200) {
+if ($_FILES['upload']['size'] > 2000) {
   $uploadVerify = false;
   $ret = "Sorry, this file is too big.";
 }
