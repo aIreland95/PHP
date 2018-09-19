@@ -23,7 +23,7 @@ if (!file_exists("uploads/" . $_SESSION['username'])) {
   mkdir("uploads/" . $_SESSION['username']);
 }
 
-  $target_dir = "uploads/" . $_SESSION['username'];
+  $target_dir = "uploads/" . $_SESSION['username'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 
