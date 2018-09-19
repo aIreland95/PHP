@@ -44,6 +44,9 @@ if (isset($_POST['logout'])) {
 if (isset($_SESSION['username'])) {
   echo "<a href=\"upload.php\"> | Upload</a>";
 }
+if (isset($_SESSION['username'])) {
+  echo "<a href=\""users.php\"> | Users</a>";
+}
 ?>
 
 <br />

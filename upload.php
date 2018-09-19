@@ -20,7 +20,7 @@ if (!file_exists("uploads")) {
 }
 
 if (!file_exists("uploads/" . $_SESSION['username'])) {
-  mkdir("uploads/" . $_SESSION['username']);
+  mkdir("uploads/" . $_SESSION['username'], 0777, true);
 }
 
   $target_dir = "uploads/" . $_SESSION['username'] . "/";
