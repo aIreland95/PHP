@@ -13,13 +13,17 @@ var_dump($_FILES['upload']);
 
 if (isset($_FILES['upload'])) {
   // check to see if uploads folder exists
-if (!file_exists("uploads/")) {
+if (!file_exists("uploads")) {
 
     //if uploads folder doesn't exist, create it
-    mkdir("uploads/");
+    mkdir("./uploads");
 }
 
-  $target_dir = "uploads/";
+if (!file_exists("uploads/" . $_SESSION['username'])) {
+  mkdir("uploads/" . $_SESSION['username']);
+}
+
+  $target_dir = "uploads/" . $_SESSION['username'];
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 
