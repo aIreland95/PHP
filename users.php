@@ -45,7 +45,7 @@ while($row = $result->fetch_assoc()) {
       echo "<td>" . $row['user_id'] . <"/td>";
       echo "<td>" . $row['username'] . <"/td>";
       echo "<td>" . $row['password'] . <"/td>";
-  echo = "</tr>";
+  echo "</tr>";
 }
 ?>
 
