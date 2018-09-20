@@ -40,7 +40,7 @@ $conn->close();
 
 <?php
 // loop through all table records
-while($row = $result-fetch_assoc()) {
+while($row = $result->fetch_assoc()) {
   echo "<tr>";
       echo "<td>" . $row['user_id'] . <"/td>";
       echo "<td>" . $row['username'] . <"/td>";
