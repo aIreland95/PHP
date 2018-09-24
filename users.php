@@ -12,6 +12,11 @@ if (!isset($_SESSION['username'])) {
 // bring in the database connection
 require('dbconnection.php');
 
+if (isset($_POST['id']) && isset($_POST['delete'])) {
+  $sql = "DELETE FROM users WHERE user_id = " . $_POST['user_id'];
+  $result = $conn->query($sql);
+}
+
 // create the SQL query
 $sql = "SELECT * from users";
 
@@ -49,7 +54,7 @@ while($row = $result->fetch_assoc()) {
       echo "<td>
               <form action=\"\" method=\"post\">
                 <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
-                <input type=\"submit\" value=\"Delete\">
+                <input type=\"submit\" value=\"Delete\" name=\"delete\">
               </form>
           </td>";
   echo "</tr>";
