@@ -51,8 +51,7 @@ while($row = $result->fetch_assoc()) {
                 <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
                 <input type=\"submit\" value=\"Delete\">
               </form>
-          </td>
-        ";
+          </td>";
   echo "</tr>";
 }
 ?>
