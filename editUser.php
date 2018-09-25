@@ -16,7 +16,7 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
 
   while ($row = $result->fetch_assoc()) {
 
-    echo "<input type=\"text\"disabled value=\"$row['user_id']\">";
+    echo "<input type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
   }
 
 }
