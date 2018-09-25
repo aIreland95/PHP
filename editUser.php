@@ -21,7 +21,7 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
 
 }
 else {
-  echo "You should not be here."
+  echo "You should not be here.";
 }
 
 
