@@ -25,9 +25,6 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
   }
 echo "</form>";
 }
-else {
-  echo "You should not be here.";
-}
 
 $newUser = $_GET['username'];
 $newPass = $_GET['password'];
@@ -43,6 +40,8 @@ if (isset($_GET['id']) && ($_GET['submit']) && $_GET['password'] != null) {
   header('Location: users.php');
 }
 
-
+else {
+  echo "You should not be here.";
+}
 
 ?>
