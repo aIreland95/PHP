@@ -31,8 +31,8 @@ else {
   echo "You should not be here.";
 }
 
-$newUser = $_GET['username'];
-$newPass = $_GET['password'];
+$newUser = $row['username'];
+$newPass = $row['password'];
 
 if ($_GET['submit'] && $_GET['username'] != null) {
   require('dbconnection.php');
