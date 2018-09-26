@@ -41,7 +41,7 @@ if (isset($_GET['submit']) && $_GET['username'] != null) {
   echo $newPass;
   $sql = "UPDATE users SET username = '" . $newUser . "' WHERE user_id = " . $user_id;
   $conn->query($sql);
-  //header('Location: users.php');
+  header('Location: users.php');
 }
 
 if (isset($_GET['submit']) && $_GET['password'] != null) {
@@ -51,7 +51,7 @@ if (isset($_GET['submit']) && $_GET['password'] != null) {
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
   $sql = "UPDATE users SET password = '" . $encrypt . "' WHERE user_id = " . $user_id;
   $conn->query($sql);
-  //header('Location: users.php');
+  header('Location: users.php');
 }
 
 ?>
