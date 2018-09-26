@@ -16,7 +16,8 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
 
   while ($row = $result->fetch_assoc()) {
 
-    echo "<input name=\"user_id\" type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
+    echo "<input name=\"dis_user_id\" type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
+    echo "<input name=\"user_id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">";
     echo "<br />";
     echo "<input name=\"username\" type=\"text\" placeholder=\"" . $row['username'] . "\">";
     echo "<br />";
@@ -40,7 +41,7 @@ if (isset($_GET['submit']) && $_GET['username'] != null) {
   echo $newPass;
   $sql = "UPDATE users SET username = '" . $newUser . "' WHERE user_id = " . $user_id;
   $conn->query($sql);
-  header('Location: users.php');
+  //header('Location: users.php');
 }
 
 if (isset($_GET['submit']) && $_GET['password'] != null) {
@@ -50,7 +51,7 @@ if (isset($_GET['submit']) && $_GET['password'] != null) {
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
   $sql = "UPDATE users SET password = '" . $encrypt . "' WHERE user_id = " . $user_id;
   $conn->query($sql);
-  header('Location: users.php');
+  //header('Location: users.php');
 }
 
 ?>
