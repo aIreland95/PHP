@@ -38,7 +38,7 @@ if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $user_id = $_GET['user_id'];
-  $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$user_id'";
+  $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$_GET['id']'";
   $conn->query($sql);
   header('Location: users.php');
 }
@@ -48,7 +48,7 @@ if ($_GET['submit'] == 'change' && $_GET['password'] != null) {
   $newPass = $_GET['password'];
   $user_id = $_GET['user_id'];
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
-  $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$user_id'";
+  $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$_GET['id']'";
   $conn->query($sql);
   header('Location: users.php');
 }
