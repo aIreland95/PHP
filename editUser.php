@@ -18,9 +18,9 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
 
     echo "<input name=\"user_id\" type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
     echo "<br />";
-    echo "<input name=\"username1\" type=\"text\" placeholder=\"" . $row['username'] . "\">";
+    echo "<input name=\"username\" type=\"text\" placeholder=\"" . $row['username'] . "\">";
     echo "<br />";
-    echo "<input name=\"password1\" type=\"text\" placeholder=\"" . $row['password'] . "\">";
+    echo "<input name=\"password\" type=\"text\" placeholder=\"" . $row['password'] . "\">";
     echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
 
     $oldID = $row['user_id'];
@@ -34,17 +34,17 @@ else {
 echo $newUser;
 echo $newPass;
 
-if ($_GET['submit'] == 'change' && $_GET['username1'] != null) {
+if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
   require('dbconnection.php');
-  $newUser = $_GET['username1'];
+  $newUser = $_GET['username'];
   $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$oldID'";
   $conn->query($sql);
   header('Location: users.php');
 }
 
-if ($_GET['submit'] == 'change' && $_GET['password1'] != null) {
+if ($_GET['submit'] == 'change' && $_GET['password'] != null) {
   require('dbconnection.php');
-  $newPass = $_GET['password1'];
+  $newPass = $_GET['password'];
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
   $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$oldID'";
   $conn->query($sql);
