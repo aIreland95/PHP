@@ -12,7 +12,7 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
   $sql = "SELECT * FROM users WHERE user_id = " . $_GET['id']; // id is int data type, don't quote it
   $result = $conn->query($sql);
 
-  echo "<form action=\"\" method=\"post\">";
+  echo "<form action=\"\" method=\"get\">";
 
   while ($row = $result->fetch_assoc()) {
 
