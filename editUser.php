@@ -32,9 +32,7 @@ else {
 }
 
 
-echo "hello"
 if (isset($_GET['submit']) && $_GET['username'] != null) {
-echo "1"
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $user_id = $_GET['user_id'];
