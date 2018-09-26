@@ -34,7 +34,7 @@ else {
 echo $newUser;
 echo $newPass;
 
-if (isset($_GET['submit']) && $_GET['username'] != null) {
+/*if (isset($_GET['submit']) && $_GET['username'] != null) {
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$oldID'";
@@ -49,6 +49,6 @@ if (isset($_GET['submit']) && $_GET['password'] != null) {
   $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$oldID'";
   $conn->query($sql);
   header('Location: users.php');
-}
+}*/
 
 ?>
