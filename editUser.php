@@ -31,13 +31,15 @@ else {
   echo "Something went wrong...";
 }
 
-echo $newUser;
-echo $newPass;
 
+echo "hello"
 if (isset($_GET['submit']) && $_GET['username'] != null) {
+echo "1"
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $user_id = $_GET['user_id'];
+  echo $newUser;
+  echo $newPass;
   $sql = "UPDATE users SET username = '" . $newUser . "' WHERE user_id = " . $user_id;
   $conn->query($sql);
   header('Location: users.php');
