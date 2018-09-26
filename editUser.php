@@ -31,14 +31,15 @@ else {
   echo "You should not be here.";
 }
 
-$newUser = $_GET['username'];
-$newPass = $_GET['password'];
+
+
 
 echo $newUser;
 echo $newPass;
 
 if ($_GET['submit'] && $_GET['username'] != null) {
   require('dbconnection.php');
+  $newUser = $_GET['username'];
   $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$oldID'";
   $conn->query($sql);
   // header('Location: users.php');
@@ -46,6 +47,7 @@ if ($_GET['submit'] && $_GET['username'] != null) {
 
 if ($_GET['submit'] && $_GET['password'] != null) {
   require('dbconnection.php');
+  $newPass = $_GET['password'];
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
   $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$oldID'";
   $conn->query($sql);
