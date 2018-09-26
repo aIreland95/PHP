@@ -39,7 +39,8 @@ if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
   $newUser = $_GET['username'];
   $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$oldID'";
   $conn->query($sql);
-  header('Location: users.php');
+  echo $sql;
+  //header('Location: users.php');
 }
 
 if ($_GET['submit'] == 'change' && $_GET['password'] != null) {
@@ -47,8 +48,9 @@ if ($_GET['submit'] == 'change' && $_GET['password'] != null) {
   $newPass = $_GET['password'];
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
   $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = '$oldID'";
+  echo $sql;
   $conn->query($sql);
-  header('Location: users.php');
+  //header('Location: users.php');
 }
 
 ?>
