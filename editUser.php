@@ -34,7 +34,7 @@ else {
 echo $newUser;
 echo $newPass;
 
-if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
+if (isset($_GET['id']) && $_GET['submit'] == 'change' && $_GET['username'] != null) {
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $user_id = $_GET['user_id'];
@@ -43,7 +43,7 @@ if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
   header('Location: users.php');
 }
 
-if ($_GET['submit'] == 'change' && $_GET['password'] != null) {
+if (isset($_GET['id']) && $_GET['submit'] == 'change' && $_GET['password'] != null) {
   require('dbconnection.php');
   $newPass = $_GET['password'];
   $user_id = $_GET['user_id'];
