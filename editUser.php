@@ -30,13 +30,13 @@ $newUser = $_GET['username'];
 $newPass = $_GET['password'];
 
 if (isset($_GET['id']) && ($_GET['submit']) && $_GET['username'] != null) {
-  $sql = "UPDATE users SET username = '$newUser' WHERE user_id = " . $_GET['id'];
+  $sql = "UPDATE users SET username = '$newUser' WHERE user_id = 8;
   header('Location: users.php');
 }
 
 if (isset($_GET['id']) && ($_GET['submit']) && $_GET['password'] != null) {
   $encrypt = password_hash($newPass, PASSWORD_BCRYPT);
-  $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = " . $_GET['id'];
+  $sql = "UPDATE users SET password = '$encrypt' WHERE user_id = 8;
   header('Location: users.php');
 }
 
