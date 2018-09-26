@@ -34,7 +34,7 @@ else {
 echo $newUser;
 echo $newPass;
 
-if (['submit'] == 'change' && $_GET['username'] != null) {
+if ($_GET['submit'] == 'change' && $_GET['username'] != null) {
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $sql = "UPDATE users SET username = '$newUser' WHERE user_id = '$oldID'";
