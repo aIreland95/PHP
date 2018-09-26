@@ -24,7 +24,6 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
     echo "<input name=\"password\" type=\"text\" placeholder=\"" . $row['password'] . "\">";
     echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
 
-    $oldID = $row['user_id'];
   }
 echo "</form>";
 }
