@@ -16,14 +16,14 @@ if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
 
   while ($row = $result->fetch_assoc()) {
 
-    echo "<input name=\"user_id\" type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
+    echo "<input name=\"dis_user_id\" type=\"text\"disabled value=\"" . $row['user_id'] . "\">";
+    echo "<input name=\"user_id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">";
     echo "<br />";
     echo "<input name=\"username\" type=\"text\" placeholder=\"" . $row['username'] . "\">";
     echo "<br />";
     echo "<input name=\"password\" type=\"text\" placeholder=\"" . $row['password'] . "\">";
     echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
 
-    $oldID = $row['user_id'];
   }
 echo "</form>";
 }
@@ -32,9 +32,7 @@ else {
 }
 
 
-echo "hello"
 if (isset($_GET['submit']) && $_GET['username'] != null) {
-echo "1"
   require('dbconnection.php');
   $newUser = $_GET['username'];
   $user_id = $_GET['user_id'];
