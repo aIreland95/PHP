@@ -8,12 +8,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 if (isset($_SESSION['username'])) {
+  echo "<a href=\"register.php\"> Register</a>";
   echo "<a href=\"login.php\"> | Login</a>";
-}
-if (isset($_SESSION['username'])) {
   echo "<a href=\"upload.php\"> | Upload</a>";
-}
-if (isset($_SESSION['username'])) {
   echo "<a href=\"users.php\"> | Users</a>";
 }
 
