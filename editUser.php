@@ -7,6 +7,16 @@ if (!isset($_SESSION['username'])) {
   header('Location: login.php');
 }
 
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"login.php\"> | Login</a>";
+}
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"upload.php\"> | Upload</a>";
+}
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"users.php\"> | Users</a>";
+}
+
 if (isset($_GET['id']) && ($_GET['edit']=="edit")) {
   require('dbconnection.php'); // brings in the database connection
   $sql = "SELECT * FROM users WHERE user_id = " . $_GET['id']; // id is int data type, don't quote it

@@ -12,6 +12,16 @@ if (!isset($_SESSION['username'])) {
 // bring in the database connection
 require('dbconnection.php');
 
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"login.php\"> | Login</a>";
+}
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"upload.php\"> | Upload</a>";
+}
+if (isset($_SESSION['username'])) {
+  echo "<a href=\"users.php\"> | Users</a>";
+}
+
 if (isset($_POST['id']) && isset($_POST['delete'])) {
   $sql = "DELETE FROM users WHERE user_id = " . $_POST['id'];
   $result = $conn->query($sql);
