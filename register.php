@@ -17,15 +17,16 @@ $conn->query($sql);
   <body>
     <form method="post" action="">
 
+      <a href ="register.php"><strong> Register</strong></a>
+      <a href="login.php"> | Login</a>
+
       <?php
       if (isset($_SESSION['username'])) {
-        echo "<a href=\"register.php\"><strong> Register</strong></a>";
-        echo "<a href=\"login.php\"> | Login</a>";
         echo "<a href=\"upload.php\"> | Upload</a>";
         echo "<a href=\"users.php\"><strong> | Users</strong></a>";
       }
       ?>
-      
+
       <br>
       <input type="text" name="username" placeholder="Username"> </br>
       <input type="password" name="password" placeholder="Password"> </br>
