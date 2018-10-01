@@ -6,17 +6,17 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['username'])) {
   header('Location: login.php');
 }
-
+require('navbar.php');
 // var_dump($_POST['upload']);
 // echo "<hr />";
 // var_dump($_FILES['upload']);
 
-if (isset($_SESSION['username'])) {
+/* if (isset($_SESSION['username'])) {
   echo "<a href=\"register.php\"> Register</a>";
   echo "<a href=\"login.php\"> | Login</a>";
   echo "<a href=\"upload.php\"> | Upload</a>";
   echo "<a href=\"users.php\"> | Users</a>";
-}
+} */
 
 if (isset($_FILES['upload'])) {
   // check to see if uploads folder exists
