@@ -17,6 +17,12 @@ $conn->query($sql);
   <body>
     <form method="post" action="">
       <a href="login.php">Login</a>
+<?php
+      if (isset($_SESSION['username'])) {
+        echo "<a href=\"upload.php\"> | Upload</a>";
+        echo "<a href=\"users.php\"> | Users</a>";
+      }
+?>
       <br>
       <input type="text" name="username" placeholder="Username"> </br>
       <input type="password" name="password" placeholder="Password"> </br>
