@@ -38,7 +38,7 @@ if (isset($_POST['logout'])) {
   <body>
 
 <a href="register.php">Register</a>
-<a href=\"login.php\"><strong> | Login</strong></a>
+<a href="login.php"><strong> | Login</strong></a>
 
 <?php
 
