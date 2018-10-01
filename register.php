@@ -18,8 +18,8 @@ $conn->query($sql);
     <form method="post" action="">
       <a href="login.php">Login</a>
       <br>
-      <input type="text" name="username"> </br>
-      <input type="password" name="password"> </br>
+      <input type="text" name="username" placeholder="Username"> </br>
+      <input type="password" name="password" placeholder="Password"> </br>
       <input type="submit">
     </form>
   </body>
