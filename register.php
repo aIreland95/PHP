@@ -16,10 +16,11 @@ $conn->query($sql);
   </head>
   <body>
     <form method="post" action="">
+      <a href="login.php">Login</a>
+      <br>
       <input type="text" name="username"> </br>
       <input type="password" name="password"> </br>
       <input type="submit">
     </form>
   </body>
 </html>
- 
