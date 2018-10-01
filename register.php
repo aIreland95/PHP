@@ -7,12 +7,6 @@ $password = password_hash($password, PASSWORD_BCRYPT);
 $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
 $conn->query($sql);
 }
-
-if (isset($_SESSION['username'])) {
-  echo "<a href=\"upload.php\"> Upload</a>";
-  echo "<a href=\"users.php\"> | Users | </a>";
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
