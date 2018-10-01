@@ -21,10 +21,10 @@ $conn->query($sql);
       <a href="login.php"> | Login</a>
 
       <?php
-      if (isset($_SESSION['username'])) {
+      /* if (isset($_SESSION['username'])) {
         echo "<a href=\"upload.php\"> | Upload</a>";
         echo "<a href=\"users.php\"><strong> | Users</strong></a>";
-      }
+      } */
       ?>
 
       <br>
