@@ -38,11 +38,11 @@ if (isset($_POST['logout'])) {
   <body>
 
 <a href="register.php">Register</a>
+<a href=\"login.php\"><strong> | Login</strong></a>
 
 <?php
 
 if (isset($_SESSION['username'])) {
-  echo "<a href=\"login.php\"><strong> | Login</strong></a>";
   echo "<a href=\"upload.php\"> | Upload</a>";
   echo "<a href=\"users.php\"> | Users</a>";
 }
