@@ -8,9 +8,12 @@ $username = filter_var($username, FILTER_SANITIZE_STRING);
 // trim any whitespace from beginning and end of $username
 $username = trim($username);
 // take off the lashes in an inout box
-$username = stripslashes($username);
+// $username = stripslashes($username);
+$username = str_replace("/", "", $username);
+$username = str_replace("\\", "", $username);
 // take off blank spaces within the username
-$username = str_replace(' ','',$username);
+// $username = str_replace(' ','',$username);
+$username = preg_replace("/\s+/", "", $username); // defeats Jake's Taboo
 // grab post data...password will be hashed, so no need to sanitize
 $password = $_POST['password'];
 $password = password_hash($password, PASSWORD_BCRYPT);
