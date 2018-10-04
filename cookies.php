@@ -15,13 +15,12 @@ $cookie_value = "bob";
   <body>
     <?php
       if (isset($_COOKIE['user'])) {
-        echo "You have been here before.";
+        echo "You have been here before \`[-|-]/";
       }
       else {
         echo "This is your first time here.";
         // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       }
-      echo "\`[-|-]/"
     ?>
   </body>
 </html>
