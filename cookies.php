@@ -3,7 +3,6 @@
 // we'll use name, value, and expire for the function
 $cookie_name = "user";
 $cookie_value = "bob";
-// setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 // 86400 = 1 day
 ?>
 
@@ -20,6 +19,7 @@ $cookie_value = "bob";
       }
       else {
         echo "This is your first time here.";
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       }
     ?>
   </body>
