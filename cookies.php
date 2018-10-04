@@ -21,7 +21,8 @@ $cookie_value = "bob";
       else {
         echo "This is your first time here.";
         echo " \`[-|-]/";
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+        // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+        setcookie($cookie_name, $cookie_value, time() + (60), "/");
       }
     ?>
   </body>
