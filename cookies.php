@@ -1,4 +1,7 @@
 <?php
+// Aaron Ireland
+// cookies.php - display last visit date and time
+
 // cookies are used to identify users, can be created using setcookie() function
 // we'll use name, value, and expire for the function
 $cookie_name = "user";
@@ -25,7 +28,6 @@ $cookie_value = "bob";
       else {
         echo "This is your first time here.";
         echo " \`[-|-]/";
-        // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       }
       date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
