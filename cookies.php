@@ -15,7 +15,11 @@ $cookie_value = "bob";
   <body>
     <?php
       if (isset($_COOKIE['user'])) {
+
+        $visit = $_COOKIE['lastVisit'];
+
         echo "You have been here before.";
+        echo "Your last visit was - " . $visit;
         echo " \`[-|-]/";
       }
       else {
