@@ -22,12 +22,12 @@ $cookie_value = "bob";
         $visit = $_COOKIE['lastVisit'];
 
         echo "You have been here before.";
-        echo " Your last visit was - " . $visit;
-        echo " \`[-|-]/";
+        echo "<br>Your last visit was - " . $visit;
+        echo "<br>\`[-|-]/";
       }
       else {
         echo "This is your first time here.";
-        echo " \`[-|-]/";
+        echo "<br>\`[-|-]/";
       }
       date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
