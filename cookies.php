@@ -19,7 +19,7 @@ $cookie_value = "bob";
         $visit = $_COOKIE['lastVisit'];
 
         echo "You have been here before.";
-        echo "Your last visit was - " . $visit;
+        echo " Your last visit was - " . $visit;
         echo " \`[-|-]/";
       }
       else {
@@ -28,6 +28,7 @@ $cookie_value = "bob";
         // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       }
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
+      setcookie('lastVisit', date("G:i - m/d/y"), time() + (60), "/");
     ?>
   </body>
 </html>
