@@ -4,6 +4,7 @@
 $cookie_name = "user";
 $cookie_value = "bob";
 // 86400 = 1 day
+date_default_timezone_set('America/New York');
 ?>
 
 <!DOCTYPE html>
