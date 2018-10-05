@@ -27,9 +27,9 @@ $cookie_value = "bob";
         echo " \`[-|-]/";
         // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       }
+      date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
       setcookie('lastVisit', date("G:i - m/d/y"), time() + (60), "/");
-      date_default_timezone_set('America/New_York');
     ?>
   </body>
 </html>
