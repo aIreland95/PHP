@@ -20,7 +20,7 @@ $cookie_value = "bob";
       if (isset($_COOKIE['user'])) {
 
         $visit = $_COOKIE['lastVisit'];
-        $now = mktime();
+        $now = date();
 
         $elapsedTime = $now - $_COOKIE['timer'];
 
