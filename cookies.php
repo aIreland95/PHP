@@ -20,8 +20,9 @@ $cookie_value = "bob";
       if (isset($_COOKIE['user'])) {
 
         $visit = $_COOKIE['lastVisit'];
+        $date2 = date();
 
-        $elapsedTime = $_COOKIE['timer'] - $_COOKIE['lastVisit'];
+        $elapsedTime = $date2 - $date1;
 
         echo "You have been here before.";
         echo "<br> Your last visit was - " . $visit;
@@ -29,13 +30,12 @@ $cookie_value = "bob";
         echo "<br> \`[-|-]/";
 
         setcookie('timer', date("g:i:s - m/d/y"), time() + (60), "/");
-
       }
       else {
         echo "This is your first time here.";
         echo "<br> \`[-|-]/";
+        $date1 = date();
       }
-      $elapsedTime = 0;
       date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
       setcookie('lastVisit', date("g:i:s - m/d/y"), time() + (60), "/");
