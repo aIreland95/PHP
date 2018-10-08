@@ -20,9 +20,8 @@ $cookie_value = "bob";
       if (isset($_COOKIE['user'])) {
 
         $visit = $_COOKIE['lastVisit'];
-        $now = date();
 
-        $elapsedTime = $_COOKIE['timer'] - $now;
+        $elapsedTime = $_COOKIE['timer'] - $_COOKIE['lastVisit'];
 
         echo "You have been here before.";
         echo "<br> Your last visit was - " . $visit;
