@@ -26,7 +26,7 @@ $cookie_value = "bob";
 
         echo "You have been here before.";
         echo "<br> Your last visit was - " . $visit;
-        echo "<br> It has been " . $elapsedTime . " seconds since you reloaded this page.";
+        echo "<br> It has been " . $date2 . " seconds since you reloaded this page.";
         echo "<br> \`[-|-]/";
 
         setcookie('timer', date("g:i:s - m/d/y"), time() + (60), "/");
