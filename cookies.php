@@ -26,13 +26,13 @@ $cookie_value = "bob";
         $elapsedTime = $now - $_COOKIE['timer'];
 
         echo "You have been here before.";
-        echo " Your last visit was - " . $visit;
-        echo "It has been " . $elapsedTime . " seconds since you were last here.";
-        echo " \`[-|-]/";
+        echo "<br> Your last visit was - " . $visit;
+        echo "<br> It has been " . $elapsedTime . " seconds since you were last here.";
+        echo "<br> \`[-|-]/";
       }
       else {
         echo "This is your first time here.";
-        echo " \`[-|-]/";
+        echo "<br> \`[-|-]/";
       }
       date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (60), "/");
