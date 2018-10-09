@@ -20,7 +20,7 @@ $cookie_value = date("g:i:s - m/d/y");
       if (isset($_COOKIE['visit'])) {
 
         $seconds = $_COOKIE['visit'];
-        $secondsCalc = ($seconds - DateTime());
+        $secondsCalc = ($seconds - date());
 
         echo "You have been here before.";
         echo "<br> Your last visit was - " . $cookie_value;
