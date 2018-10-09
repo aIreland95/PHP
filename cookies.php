@@ -20,13 +20,13 @@ $cookie_value = "bob";
       if (isset($_COOKIE['user'])) {
 
         echo "You have been here before.";
+        echo "<br> Your last visit was - " . $visit;
 
-          $seconds = $_COOKIE['lastVisit'];
-          $secondsCalc = (date() - $seconds);
+        $seconds = $_COOKIE['lastVisit'];
+        $secondsCalc = ($seconds - date());
 
-          echo "<br> Your last visit was - " . $visit;
-          echo "<br> It has been " . $secondsCalc . " seconds since you reloaded this page.";
-          echo "<br> \`[-|-]/";
+        echo "<br> It has been " . $secondsCalc . " seconds since you reloaded this page.";
+        echo "<br> \`[-|-]/";
 
       }
       else {
