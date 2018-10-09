@@ -34,7 +34,7 @@ $cookie_value = mktime();
         echo "<br> \`[-|-]/";
       }
       date_default_timezone_set('America/New_York');
-      setcookie($cookie_name, $cookie_value, time() + (60), "/");
+      setcookie($cookie_name, $cookie_value, time() + (600), "/");
     ?>
   </body>
 </html>
