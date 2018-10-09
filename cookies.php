@@ -36,6 +36,8 @@ $cookie_value = mktime();
       date_default_timezone_set('America/New_York');
       setcookie($cookie_name, $cookie_value, time() + (600), "/");
     ?>
-    <img src="C:\Users\Aaron\Pictures\Saved Pictures\bee_movie.jpg"
+<br>
+    <br>
+    <img src="images\bee_movie.jpg"
   </body>
 </html>
