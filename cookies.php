@@ -24,7 +24,7 @@ $cookie_value = mktime();
         $secondsCalc = ($current - $seconds);
 
         echo "You have been here before.";
-        echo "<br> Your last visit was - " . $cookie_value;
+        echo "<br> Your last visit was - " . date("g:i:s - m/d/y");
         echo "<br> It has been " . $secondsCalc . " seconds since you reloaded this page.";
         echo "<br> \`[-|-]/";
 
