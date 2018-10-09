@@ -5,7 +5,7 @@
 // cookies are used to identify users, can be created using setcookie() function
 // we'll use name, value, and expire for the function
 $cookie_name = "visit";
-$cookie_value = date("g:i:s - m/d/y");
+$cookie_value = mktime();
 // 86400 = 1 day
 ?>
 
@@ -20,7 +20,8 @@ $cookie_value = date("g:i:s - m/d/y");
       if (isset($_COOKIE['visit'])) {
 
         $seconds = $_COOKIE['visit'];
-        $secondsCalc = ($seconds - date());
+        $current = mktime();
+        $secondsCalc = ($current - $seconds);
 
         echo "You have been here before.";
         echo "<br> Your last visit was - " . $cookie_value;
