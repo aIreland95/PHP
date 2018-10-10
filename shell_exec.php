@@ -8,13 +8,13 @@ echo "<pre>$output</pr>";
 $pwd = shell_exec('pwd');
 echo "<pre>$pwd</pre>";
 
-$check = shell_exec('ls test');
-$goodCheck = shell_exec('ls uploads');
+$check = file_exists("test");
+$goodCheck = file_exists("uploads");
 
-if ($check == NULL) { echo "This file does not exist..."; }
+if ($check == false) { echo "This file does not exist..."; }
 else { echo "This file exists!"; }
 
-if ($goodCheck == NULL) { echo "This file does not exist..."; }
+if ($goodCheck == false) { echo "This file does not exist..."; }
 else { echo "This file exists!"; }
 
  ?>
