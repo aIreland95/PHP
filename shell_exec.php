@@ -8,6 +8,14 @@ echo "<pre>$output</pr>";
 $pwd = shell_exec('pwd');
 echo "<pre>$pwd</pre>";
 
-$check = shell_exec('find /var/www/html/aaron/PHP "test"');
-echo "<pre>$check</pre>";
+$check = shell_exec('ls test');
+
+if ($check == NULL) {
+  echo "This file does not exist...";
+}
+else {
+  echo "This file exists!";
+}
+
+
  ?>
