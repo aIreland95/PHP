@@ -10,7 +10,17 @@ echo "<pre>$pwd</pre>";
 
 $check = file_exists("test");
 
-if ($check == false) { echo "This file does not exist..."; }
-else { echo "This file exists!"; }
+if ($check) {
+  $checkDir = is_dir("test");
+  if ($checkDir) {
+    echo "This exists and is a directory!";
+  }
+  else {
+    echo "This exists, but it's not a directory.";
+  }
+}
+else {
+  mkdir("test");
+}
 
  ?>
