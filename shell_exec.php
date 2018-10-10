@@ -8,7 +8,7 @@ echo "<pre>$output</pr>";
 $pwd = shell_exec('pwd');
 echo "<pre>$pwd</pre>";
 
-$check = shell_exec('ls test');
+$check = shell_exec('ls uploads');
 
 if ($check == NULL) {
   echo "This file does not exist...";
