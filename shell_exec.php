@@ -18,7 +18,14 @@ if ($check) {
 
     echo "This exists and is a directory!";
     $testArray = scandir("test/");
-    var_dump($testArray);
+    // var_dump($testArray);
+
+    foreach ($testArray as $key => $value) {
+
+      if ($value == "." || $value == "..") { continue; }
+      echo $value . "<br />";
+
+    }
   }
   else {
 
