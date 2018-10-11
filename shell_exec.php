@@ -17,6 +17,8 @@ if ($check) {
   if ($checkDir) {
 
     echo "This exists and is a directory!";
+    $testArray = scandir("test/");
+    var_dump($testArray);
   }
   else {
 
