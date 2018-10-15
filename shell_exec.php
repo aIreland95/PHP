@@ -17,6 +17,7 @@ if ($check) {
   if ($checkDir) {
 
     echo "This exists and is a directory!";
+    echo "<br />";
     $testArray = scandir("test/");
     // var_dump($testArray);
 
@@ -25,6 +26,7 @@ if ($check) {
       if ($value == "." || $value == "..") { continue; }
       echo $value . "<br />";
 
+      $userArray = shell_exec('w -s');
     }
   }
   else {
@@ -35,6 +37,15 @@ if ($check) {
 else {
 
   mkdir("test");
+}
+
+$users = shell_exec("W");
+$usersExploded = explode("\n", $users);
+
+foreach ($usersExploded as $key => $value) {
+  if ($key == "0" || $key == "1") { continue; }
+  $username = substr($value, 0, strrpos($value, ' '));
+  echo $username . "<br>";
 }
 
  ?>
