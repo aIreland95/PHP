@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-require('Practice\dbconnection.php');
+require('dbconnection.php');
 // grab post data, can be dangerous because of XSS or MySQL Injection
 $email = $_POST['email'];
 // sanitize the $username by removing tags
