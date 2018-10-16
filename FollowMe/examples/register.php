@@ -117,10 +117,10 @@ $conn->query($sql);
                                 </div>
                                 <form class="register-form">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" name="email" class="form-control" placeholder="Email">
 
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                     <button class="btn btn-danger btn-block btn-round">Register</button>
                                 </form>
                                 <div class="forgot">
