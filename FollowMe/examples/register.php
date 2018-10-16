@@ -115,7 +115,7 @@ $conn->query($sql);
 										<i class="fa fa-twitter"></i>
 									</a>
                                 </div>
-                                <form class="register-form">
+                                <form class="register-form" method="post" action="">
                                     <label>Email</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email">
 
