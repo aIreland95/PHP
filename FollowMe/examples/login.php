@@ -23,7 +23,7 @@ if (isset($_POST['email'])) {
     }
   }
 }
-header('Location: landing.html');
+// header('Location: landing.html');
 ?>
 
 <!doctype html>
