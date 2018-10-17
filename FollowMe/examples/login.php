@@ -3,28 +3,27 @@
 // Aaron Ireland
 // new register.php - email and passwrod is added to database, uses database.php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+session_start();
 require('database.php');
-// grab post data, can be dangerous because of XSS or MySQL Injection
-$email = $_POST['email'];
-// sanitize the $username by removing tags
-$email = filter_var($email, FILTER_SANITIZE_STRING);
-// trim any whitespace from beginning and end of $email
-$email = trim($email);
-// take off the lashes in an input box
-$email = str_replace("/", "", $email);
-$email = str_replace("\\", "", $email);
-// take off blank spaces within the email
-$email = preg_replace("/\s+/", "", $email); // defeats Jake's Taboo
-// grab post data...password will be hashed, so no need to sanitize
-$password = $_POST['password'];
-$password = password_hash($password, PASSWORD_BCRYPT);
-$sql = "INSERT INTO fm_users (email,password) VALUES ('$email','$password')";
-$conn->query($sql);
 
-header('Location: login_fm.php');
+if (isset($_POST['email'])) {
+  $username = $_POST['email'];
+  $password = $_POST['password'];
+
+// SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
+  $sql = "SELECT email, password FROM fm_users WHERE email = '$email'";
+
+// Execute the SQL and return array to $result
+  $result = $conn->query($sql);
+
+//Extracting the returned query information
+  while ($row = $result->fetch_assoc()) {
+    if ($email == $row['email'] && password_verify($password, $row['password'])) {
+      $_SESSION['email'] = $email;
+    }
+  }
 }
-
+header('Location: landing.html');
 ?>
 
 <!doctype html>
@@ -53,6 +52,14 @@ header('Location: login_fm.php');
 	<link href="../assets/css/nucleo-icons.css" rel="stylesheet">
 
 </head>
+
+<?php
+
+if (isset($_POST['logout'])) {
+  unset($_SESSION['email']);
+}
+?>
+
 <body>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent">
         <div class="container">
@@ -125,7 +132,7 @@ header('Location: login_fm.php');
 
                                     <label>Password</label>
                                     <input type="password" name="password" class="form-control" placeholder="Password">
-                                    <button class="btn btn-danger btn-block btn-round">Register</button>
+                                    <button class="btn btn-danger btn-block btn-round">Login</button>
                                 </form>
                                 <div class="forgot">
                                     <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
@@ -134,7 +141,7 @@ header('Location: login_fm.php');
                         </div>
                     </div>
 					<div class="footer register-footer text-center">
-						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Aaron</h6>
 					</div>
                 </div>
         </div>
