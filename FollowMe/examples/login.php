@@ -20,10 +20,10 @@ if (isset($_POST['email'])) {
   while ($row = $result->fetch_assoc()) {
     if ($email == $row['email'] && password_verify($password, $row['password'])) {
       $_SESSION['email'] = $email;
+      header('Location: landing.html');
     }
   }
 }
-// header('Location: landing.html');
 ?>
 
 <!doctype html>
