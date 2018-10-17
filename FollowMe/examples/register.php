@@ -22,7 +22,7 @@ $password = password_hash($password, PASSWORD_BCRYPT);
 $sql = "INSERT INTO fm_users (email,password) VALUES ('$email','$password')";
 $conn->query($sql);
 
-header('Location: login_fm.php');
+header('Location: login.php');
 }
 
 ?>
