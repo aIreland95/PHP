@@ -8,7 +8,7 @@ require('database.php');
 // grab post data, can be dangerous because of XSS or MySQL Injection
 $email = $_POST['email'];
 // sanitize the $username by removing tags
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+$email = filter_var($email, FILTER_SANITIZE_STRING);
 // trim any whitespace from beginning and end of $email
 $email = trim($email);
 // take off the lashes in an input box
