@@ -1,18 +1,20 @@
 <?php
+
+// Aaron Ireland
+// new register.php - email and passwrod is added to database, uses database.php
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 require('database.php');
 // grab post data, can be dangerous because of XSS or MySQL Injection
 $email = $_POST['email'];
 // sanitize the $username by removing tags
-$email = filter_var($email, FILTER_SANITIZE_STRING);
-// trim any whitespace from beginning and end of $username
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+// trim any whitespace from beginning and end of $email
 $email = trim($email);
-// take off the lashes in an inout box
-// $username = stripslashes($username);
+// take off the lashes in an input box
 $email = str_replace("/", "", $email);
 $email = str_replace("\\", "", $email);
-// take off blank spaces within the username
-// $username = str_replace(' ','',$username);
+// take off blank spaces within the email
 $email = preg_replace("/\s+/", "", $email); // defeats Jake's Taboo
 // grab post data...password will be hashed, so no need to sanitize
 $password = $_POST['password'];
