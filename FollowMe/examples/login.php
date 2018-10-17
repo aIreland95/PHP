@@ -114,7 +114,7 @@ if (isset($_POST['logout'])) {
                     <div class="row">
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
-                                <h3 class="title">Welcome</h3>
+                                <h3 class="title">Login</h3>
 								<div class="social-line text-center">
                                     <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                                         <i class="fa fa-facebook-square"></i>
