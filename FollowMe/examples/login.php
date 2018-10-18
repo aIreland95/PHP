@@ -22,7 +22,7 @@ if (isset($_POST['email'])) {
       $_SESSION['email'] = $email;
     }
   }
-  header('Location: landing.html');
+  header('Location: profile.html');
 }
 ?>
 
