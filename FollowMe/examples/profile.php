@@ -1,3 +1,8 @@
+<?php
+// start session
+// uses $_SESSION['email'] to display email in navigation
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,7 +46,9 @@
 	                    <a href="login.php" class="nav-link">Login</a>
 	                </li>
 									<li class="nav-item">
-	                    <a href="login.php" class="nav-link">Login</a>
+	                    <a href="#" class="nav-link">
+													<?php echo $_SESSION['email']; ?>
+											</a>
 	                </li>
 	            </ul>
 	        </div>
@@ -150,7 +157,7 @@
                 </nav>
                 <div class="credits ml-auto">
                     <span class="copyright">
-                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Aaron
+                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tem
                     </span>
                 </div>
             </div>

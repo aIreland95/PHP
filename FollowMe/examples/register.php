@@ -134,7 +134,7 @@ header('Location: login.php');
                         </div>
                     </div>
 					<div class="footer register-footer text-center">
-						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Aaron</h6>
+						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tem</h6>
 					</div>
                 </div>
         </div>
