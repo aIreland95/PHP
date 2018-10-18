@@ -108,7 +108,7 @@ if (isset($_POST['logout'])) {
 		</div>
     </nav>
     <div class="wrapper">
-        <div class="page-header" style="background-image: url('../assets/img/chancy.jpg');">
+        <div class="page-header" style="background-image: url('../assets/img/temmie.jpg');">
             <div class="filter"></div>
                 <div class="container">
                     <div class="row">
