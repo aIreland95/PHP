@@ -2,6 +2,7 @@
 // start session
 // uses $_SESSION['email'] to display email in navigation
 // modify fm_users to include image URL, load it to $_SESSION['image']
+// modify the fm_users table to include first_name and last_name
 ?>
 
 <!doctype html>
@@ -67,7 +68,7 @@
                         <img src="<?php echo $_SESSION['image']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $SESSION['last_name']; ?><br /></h4>
 						<h6 class="description">Music Producer</h6>
                     </div>
                 </div>
