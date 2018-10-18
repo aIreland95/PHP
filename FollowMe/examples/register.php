@@ -101,7 +101,7 @@ header('Location: login.php');
 		</div>
     </nav>
     <div class="wrapper">
-        <div class="page-header" style="background-image: url('../assets/img/cuphead_title.jpg');">
+        <div class="page-header" style="background-image: url('../assets/img/chancy.jpg');">
             <div class="filter"></div>
                 <div class="container">
                     <div class="row">
