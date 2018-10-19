@@ -1,8 +1,10 @@
 <?php
 // start session
 // uses $_SESSION['email'] to display email in navigation
-// modify fm_users to include image URL, load it to $_SESSION['image']
+// modify fm_users to include image URL, load it to $_SESSION['image_url'];
 // modify the fm_users table to include first_name and last_name
+// modify fm_users to add title, load it to $_SESSION['title'];
+// modify fm_users to add description, load it to $_SESSION['description'];
 ?>
 
 <!doctype html>
@@ -76,7 +78,7 @@
                         <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $SESSION['last_name']; ?><br /></h4>
 
 						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
-						
+
                     </div>
                 </div>
                 <div class="row">
