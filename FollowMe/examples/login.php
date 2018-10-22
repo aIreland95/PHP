@@ -7,7 +7,7 @@ session_start();
 require('database.php');
 
 if (isset($_POST['email'])) {
-  $username = $_POST['email'];
+  $email = $_POST['email'];
   $password = $_POST['password'];
 
 // SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
