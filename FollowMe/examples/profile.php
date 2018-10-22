@@ -81,7 +81,8 @@ require('database.php');
                     </div>
                     <div class="name">
 
-                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $SESSION['last_name']; ?><br /></h4>
+											<h4><?php echo $_SESSION['first_name'] . " " . $SESSION['last_name']; ?></h4>
+                        <h4 class="title"><br /></h4>
 
 						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
 
