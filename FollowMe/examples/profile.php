@@ -5,6 +5,9 @@
 // modify the fm_users table to include first_name and last_name
 // modify fm_users to add title, load it to $_SESSION['title'];
 // modify fm_users to add description, load it to $_SESSION['description'];
+
+$fullname = "SELECT first_name, last_name FROM fm_users WHERE email = '$email'"
+
 ?>
 
 <!doctype html>
