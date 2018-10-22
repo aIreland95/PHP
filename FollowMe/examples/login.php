@@ -10,8 +10,9 @@ if (isset($_POST['email'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
+
 // SQL statement to execute, SURROUND VARIABLES WITH SINGLE QUOTES
-  $sql = "SELECT email, password FROM fm_users WHERE email = '$email'";
+  $sql = "SELECT email, password, first_name, last_name, image_url, title, description FROM fm_users WHERE email = '$email'";
 
 // Execute the SQL and return array to $result
   $result = $conn->query($sql);
@@ -20,6 +21,12 @@ if (isset($_POST['email'])) {
   while ($row = $result->fetch_assoc()) {
     if ($email == $row['email'] && password_verify($password, $row['password'])) {
       $_SESSION['email'] = $email;
+      $_SESION['first_name'] = $row['first_name'];
+      $_SESSION['last_name'] = $row['last_name'];
+      $_SESSION['image_url'] = $row['image_url'];
+      $_SESSION['title'] = $row['title'];
+      $_SESSION['description'] = $row['description'];
+
     }
   }
 
