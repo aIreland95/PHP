@@ -22,7 +22,10 @@ if (isset($_POST['email'])) {
       $_SESSION['email'] = $email;
     }
   }
-  header('Location: profile.php');
+
+  if (isset($_SESSION['email'])) {
+    header('Location: profile.php');
+  }
 }
 ?>
 
