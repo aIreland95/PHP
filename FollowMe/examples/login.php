@@ -1,7 +1,7 @@
 <?php
 
 // Aaron Ireland
-// new register.php - email and passwrod is added to database, uses database.php
+// login.php - this sets the session variables based on the user's login
 
 session_start();
 require('database.php');
