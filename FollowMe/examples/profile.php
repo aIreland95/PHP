@@ -6,6 +6,12 @@
 // modify fm_users to add title, load it to $_SESSION['title'];
 // modify fm_users to add description, load it to $_SESSION['description'];
 
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+require('database.php');
+
 $fullname = "SELECT first_name, last_name FROM fm_users WHERE email = '$email'"
 
 $nameResult = $conn->query($fullname);
