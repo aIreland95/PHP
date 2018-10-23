@@ -72,33 +72,36 @@ require('database.php');
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h2 class="text-center">Keep in touch?</h2>
-                        <form class="contact-form">
+                        <h2 class="text-center">Edit Profile</h2>
+                        <form class="contact-form" action="" method="post">
                             <div class="row">
+
                                 <div class="col-md-6">
-                                    <label>Name</label>
-                <div class="input-group">
+                                    <label>First Name</label>
+                                    <div class="input-group">
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="Name">
-                                  </div>
+                                      <input type="text" class="form-control" placeholder="First Name">
+                                    </div>
                                 </div>
+
                                 <div class="col-md-6">
-                                    <label>Email</label>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="nc-icon nc-email-85"></i>
-                  </span>
-                  <input type="text" class="form-control" placeholder="Email">
-                </div>
+                                    <label>Last Name</label>
+                                    <div class="input-group">
+                                      <span class="input-group-addon">
+                                        <i class="nc-icon nc-single-02"></i>
+                                      </span>
+                                      <input type="text" class="form-control" placeholder="Last Name">
+                                    </div>
                                 </div>
-                            </div>
-                            <label>Message</label>
-                            <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                            </div> <!-- ends the first row -->
+
+                            <label>Description</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto">
-                                    <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                    <button class="btn btn-danger btn-lg btn-fill">Update</button>
                                 </div>
                             </div>
                         </form>
