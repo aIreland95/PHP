@@ -86,7 +86,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="First Name"><?php echo $_SESSION['first_name'] ?></input>
+                                      <input type="text" class="form-control" placeholder="<?php echo $_SESSION['first_name'] ?>">
                                     </div>
                                 </div>
 
