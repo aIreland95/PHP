@@ -124,7 +124,7 @@ require('database.php');
 
 <?php
 
-if (['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
 
   if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
 
@@ -136,7 +136,7 @@ if (['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
 
     $sql = "UPDATE fm_users SET first_name = '" . $firstname . "', last_name = '" . $lastname . "', title = '" . $title ."', description = '" . $description . "' WHERE email = " . $email;
     $conn->query($sql);
-    header('Location: editprofile.php');
+    header('Location: profile.php');
   }
 }
 
