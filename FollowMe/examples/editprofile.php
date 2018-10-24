@@ -122,25 +122,6 @@ require('database.php');
             </div>
         </div>
 
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
-
-  if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
-
-    $email = $_SESSION['email'];
-    $firstname = $_POST['first_name'];
-    $lastname = $_POST['last_name'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-
-    $sql = "UPDATE fm_users SET first_name = '" . $firstname . "', last_name = '" . $lastname . "', title = '" . $title ."', description = '" . $description . "' WHERE email = " . $email;
-    $conn->query($sql);
-    header('Location: profile.php');
-  }
-}
-
-?>
     </div>
 	<footer class="footer section-dark">
         <div class="container">
