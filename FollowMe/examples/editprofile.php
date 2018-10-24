@@ -1,6 +1,9 @@
 <?php
 // start the session if it has not started yet
-//
+// add name attributes to the form elements
+// set default values for each form element from $_SESSION
+// update submitted values to database
+// update submitted values to $_SESSION
 
 if (!isset($_SESSION)) {
   session_start();
@@ -83,7 +86,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="First Name">
+                                      <input type="text" class="form-control" placeholder="First Name"><?php echo $_SESSION['first_name'] ?>
                                     </div>
                                 </div>
 
@@ -93,7 +96,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="Last Name">
+                                      <input type="text" class="form-control" placeholder="Last Name"><?php echo $_SESSION['last_name'] ?>
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
@@ -103,11 +106,11 @@ require('database.php');
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="text" class="form-control" placeholder="Title">
+                              <input type="text" class="form-control" placeholder="Title"><?php echo $_SESSION['title'] ?>
                             </div>
 
                             <label>Description</label>
-                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
+                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
                                     <button class="btn btn-danger btn-lg btn-fill">Update</button>
