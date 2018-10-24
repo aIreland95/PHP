@@ -86,7 +86,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="<?php echo $_SESSION['first_name'] ?>">
+                                      <input type="text" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
                                     </div>
                                 </div>
 
@@ -96,7 +96,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="Last Name"><?php echo $_SESSION['last_name'] ?></input>
+                                      <input type="text" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
@@ -106,7 +106,7 @@ require('database.php');
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="text" class="form-control" placeholder="Title"><?php echo $_SESSION['title'] ?></input>
+                              <input type="text" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title'] ?>">
                             </div>
 
                             <label>Description</label>
