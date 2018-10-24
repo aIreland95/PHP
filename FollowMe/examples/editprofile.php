@@ -20,7 +20,7 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' WHERE email = '$email';
+    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
     header('Location: profile.php');
   }
