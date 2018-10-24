@@ -1,7 +1,7 @@
 <?php
-// start the session if it has not started yet
+// start the session if it has not started yet - X
 // add name attributes to the form elements
-// set default values for each form element from $_SESSION
+// set default values for each form element from $_SESSION - X
 // update submitted values to database
 // update submitted values to $_SESSION
 
@@ -86,7 +86,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
+                                      <input type="text" name="first-name-input" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
                                     </div>
                                 </div>
 
@@ -96,7 +96,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
+                                      <input type="text" name="last-name-input" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
@@ -106,11 +106,11 @@ require('database.php');
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="text" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title'] ?>">
+                              <input type="text" name="title-input" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title'] ?>">
                             </div>
 
                             <label>Description</label>
-                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
+                            <textarea class="form-control" name="description-input" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
                                     <button class="btn btn-danger btn-lg btn-fill">Update</button>
