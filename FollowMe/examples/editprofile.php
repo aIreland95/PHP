@@ -1,6 +1,6 @@
 <?php
 // start the session if it has not started yet - X
-// add name attributes to the form elements
+// add name attributes to the form elements - X
 // set default values for each form element from $_SESSION - X
 // update submitted values to database
 // update submitted values to $_SESSION
@@ -113,7 +113,7 @@ require('database.php');
                             <textarea class="form-control" name="description-input" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
-                                    <button class="btn btn-danger btn-lg btn-fill">Update</button>
+                                    <button class="btn btn-danger btn-lg btn-fill" name="update-btn">Update</button>
                                 </div>
                             </div>
                         </form>
