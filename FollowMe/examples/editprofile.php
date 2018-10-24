@@ -72,12 +72,13 @@ require('database.php');
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
+                      <!-- ml-auto and mr-auto automatically move the div ogjects -->
                         <h2 class="text-center">Edit Profile</h2>
                         <form class="contact-form" action="" method="post">
                             <div class="row">
-
+                              <!-- col-md-6 designates the amount of spaces used in the 12 space grid that is used -->
                                 <div class="col-md-6">
-                                    <label>First Name</label>
+                                    <label>First Name:</label>
                                     <div class="input-group">
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
@@ -87,7 +88,7 @@ require('database.php');
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label>Last Name</label>
+                                    <label>Last Name:</label>
                                     <div class="input-group">
                                       <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
@@ -96,6 +97,14 @@ require('database.php');
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
+
+                            <label>Title:</label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="nc-icon nc-tag-content"></i>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Title">
+                            </div>
 
                             <label>Description</label>
                             <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
