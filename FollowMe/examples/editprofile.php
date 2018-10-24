@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
+if (isset($_SESSION['email'])) && isset($_POST['update-btn'])) {
 
   if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
 
