@@ -86,7 +86,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                           <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" name="first-name-input" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
+                                      <input type="text" name="first_name" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
                                     </div>
                                 </div>
 
@@ -96,7 +96,7 @@ require('database.php');
                                       <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
                                       </span>
-                                      <input type="text" name="last-name-input" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
+                                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
@@ -106,11 +106,11 @@ require('database.php');
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="text" name="title-input" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title'] ?>">
+                              <input type="text" name="title" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title'] ?>">
                             </div>
 
                             <label>Description</label>
-                            <textarea class="form-control" name="description-input" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
+                            <textarea class="form-control" name="description" rows="4" placeholder="Tell everyone a little about you..."><?php echo $_SESSION['description'] ?></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
                                     <button class="btn btn-danger btn-lg btn-fill" name="update-btn">Update</button>
@@ -122,6 +122,25 @@ require('database.php');
             </div>
         </div>
 
+<?php
+
+if (['REQUEST_METHOD'] == 'POST') && isset($_POST['update-btn'])) {
+
+  if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
+
+    $email = $_SESSION['email'];
+    $firstname = $_POST['first_name'];
+    $lastname = $_POST['last_name'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    $sql = "UPDATE fm_users SET first_name = '" . $firstname . "', last_name = '" . $lastname . "', title = '" . $title ."', description = '" . $description . "' WHERE email = " . $email;
+    $conn->query($sql);
+    header('Location: editprofile.php');
+  }
+}
+
+?>
     </div>
 	<footer class="footer section-dark">
         <div class="container">
