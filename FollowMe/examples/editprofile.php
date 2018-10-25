@@ -1,9 +1,6 @@
 <?php
-// start the session if it has not started yet - X
-// add name attributes to the form elements - X
-// set default values for each form element from $_SESSION - X
-// update submitted values to database
-// update submitted values to $_SESSION
+// Aaron Ireland
+// editprofile.php
 
 if (!isset($_SESSION)) {
   session_start();
