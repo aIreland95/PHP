@@ -23,10 +23,10 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
 
-    $_SESSION['first_name'] = $row['first_name'];
-    $_SESSION['last_name'] = $row['last_name'];
-    $_SESSION['title'] = $row['title'];
-    $_SESSION['description'] = $row['description'];
+    $_SESSION['first_name'] = $firstname;
+    $_SESSION['last_name'] = $lastname;
+    $_SESSION['title'] = $title;
+    $_SESSION['description'] = $description;
 
     header('Location: profile.php');
   }
