@@ -30,8 +30,9 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
       $_SESSION['title'] = $row['title'];
       $_SESSION['description'] = $row['description'];
     }
+      header('Location: profile.php');
   }
-  header('Location: profile.php');
+
 }
 
 ?>
