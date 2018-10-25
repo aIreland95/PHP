@@ -23,6 +23,9 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
 
+    $sql2 = "SELECT * FROM fm_users where email = '$email'";
+    $result = $conn->query($sql2);
+
     while ($row = $result->fetch_assoc()) {
 
       $_SESSION['first_name'] = $row['first_name'];
