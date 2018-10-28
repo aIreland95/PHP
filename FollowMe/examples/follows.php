@@ -1,11 +1,8 @@
 <?php
-// start session if not started - X
-// get array of users from database - O
-// replace Flume with first and last name from database - O
-// list item needs to be in a loop - O
-// replace music producer with title - O
-// image src should change based on the profile - O
-// unchecked by default - X
+
+// Aaron Ireland
+// follows.php - pulls users from database and displays their info for following
+
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -105,7 +102,7 @@ $conn->close();
 
             }
 						?>
-            
+
 						<hr />
 					</ul>
 				</div>
