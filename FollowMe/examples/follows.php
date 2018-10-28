@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-$sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
+$sql = "SELECT first_name, last_name, title, image_url FROM fm_users WHERE email";
 $result = $conn->query($sql);
 $conn->close();
 
