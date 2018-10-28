@@ -11,6 +11,9 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
+$sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
+$result = $conn->query($sql);
+
 ?>
 
 <!doctype html>
@@ -77,9 +80,6 @@ require('database.php');
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
 						<?php
-
-            $sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
-            $result = $conn->query($sql);
 
             while($row = $result->fetch_assoc()) {
 
