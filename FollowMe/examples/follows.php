@@ -1,10 +1,18 @@
 <?php
-//Start Session if it is not running
-//Add name attributes to form elements
-//Set default values for each form element from $_SESSION
-//Update submitted values to database
-//Upldate submitted values to $_SESSION
+// start session if not started - X
+// get array of users from database - O
+// replace Flume with first and last name from database - O
+// list item needs to be in a loop - O
+// replace music producer with title - O
+// image src should change based on the profile - O
+// unchecked by default - X
+if (!isset($_SESSION)) {
+  session_start();
+}
+require('database.php');
+
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -68,24 +76,35 @@
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
-						<li>
-							<div class="row">
-								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-									<img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-								</div>
-								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-									<h6>Flume<br/><small>Musical Producer</small></h6>
-								</div>
-								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
-									<div class="form-check">
-										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox" value="" checked>
-											<span class="form-check-sign"></span>
-										</label>
-									</div>
-								</div>
-							</div>
-						</li>
+						<?php
+
+            $sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
+            $result = $conn->query($sql);
+
+            while($row = $result->fetch_assoc()) {
+
+              echo "<li>";
+  						echo	"<div class=\"row\">";
+  						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
+  						echo			"<img src="$row['image_url']" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
+  						echo		"</div>";
+  						echo		"<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
+  						echo			"<h6>" . $row['first_name'] . " " . $row['last_name'] . "<br/><small>" . $row['title'] . "</small></h6>";
+  						echo		"</div>";
+  						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
+  						echo			"<div class=\"form-check\">";
+  						echo				"<label class=\"form-check-label\">";
+  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\">";
+  						echo					"<span class=\"form-check-sign\"></span>";
+  						echo				"</label>";
+  						echo			"</div>";
+  						echo		"</div>";
+  						echo	"</div>";
+  						echo "</li>";
+
+            }
+
+						?>
 						<hr />
 					</ul>
 				</div>
