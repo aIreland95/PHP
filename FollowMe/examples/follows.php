@@ -1,14 +1,14 @@
 <?php
 
 // Aaron Ireland
-// follows.php - pulls users from database and displays their info for following 
+// follows.php - pulls users from database and displays their info for following
 
 if (!isset($_SESSION)) {
   session_start();
 }
 require('database.php');
 
-$sql = "SELECT first_name, last_name, title, image_url FROM fm_users WHERE email";
+$sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
 $conn->close();
 
