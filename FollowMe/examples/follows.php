@@ -1,7 +1,7 @@
 <?php
 
 // Aaron Ireland
-// follows.php - pulls users from database and displays their info for following
+// follows.php - pulls users from database and displays their info for following 
 
 if (!isset($_SESSION)) {
   session_start();
