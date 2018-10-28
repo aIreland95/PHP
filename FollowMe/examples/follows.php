@@ -13,6 +13,7 @@ require('database.php');
 
 $sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
+$conn->close();
 
 ?>
 
@@ -86,7 +87,7 @@ $result = $conn->query($sql);
               echo "<li>";
   						echo	"<div class=\"row\">";
   						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
-  						echo			"<img src="$row['image_url']" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
+  						echo			"<img src=" . $row['image_url'] . " alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
   						echo		"</div>";
   						echo		"<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
   						echo			"<h6>" . $row['first_name'] . " " . $row['last_name'] . "<br/><small>" . $row['title'] . "</small></h6>";
@@ -103,8 +104,8 @@ $result = $conn->query($sql);
   						echo "</li>";
 
             }
-
 						?>
+            
 						<hr />
 					</ul>
 				</div>
