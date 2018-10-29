@@ -99,11 +99,11 @@ $conn->close();
   						echo		"</div>";
   						echo	"</div>";
   						echo "</li>";
+              echo "<hr />";
 
             }
 						?>
 
-						<hr />
 					</ul>
 				</div>
 			</div>
