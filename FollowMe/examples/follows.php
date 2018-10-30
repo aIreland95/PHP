@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-$sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
+$sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
 
 $userid = $_SESSION['user_id'];
@@ -90,6 +90,8 @@ while($row = $follow_result->fetch_row()) {
 
             while($row = $result->fetch_assoc()) {
 
+              
+
               echo "<li>";
   						echo	"<div class=\"row\">";
   						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
@@ -101,7 +103,11 @@ while($row = $follow_result->fetch_row()) {
   						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
   						echo			"<div class=\"form-check\">";
   						echo				"<label class=\"form-check-label\">";
-  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\">";
+  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\"
+
+
+
+              >";
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
   						echo			"</div>";
