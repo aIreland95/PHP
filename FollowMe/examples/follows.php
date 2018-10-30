@@ -10,7 +10,16 @@ require('database.php');
 
 $sql = "SELECT first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
-$conn->close();
+
+$userid = $_SESSION['user_id'];
+$sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
+
+$follow_result = $conn->query($sql);
+
+while($row = $follow_result->fetch_row()) {
+
+  $following_user_ids[] = $row;
+}
 
 ?>
 
