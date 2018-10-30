@@ -18,7 +18,7 @@ $follow_result = $conn->query($sql);
 
 while($row = $follow_result->fetch_row()) {
 
-  $following_user_ids[] = $row;
+  $following_user_ids[] = $row[0];
 }
 
 ?>
