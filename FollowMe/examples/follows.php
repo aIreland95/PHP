@@ -109,7 +109,7 @@ while($row = $follow_result->fetch_row()) {
 
                 echo " checked";
               }
-              ">";
+              echo ">";
 
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
