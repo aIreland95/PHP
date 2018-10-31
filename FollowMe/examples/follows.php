@@ -106,7 +106,7 @@ echo $following_user_ids[1];
   						echo				"<label class=\"form-check-label\">";
   						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
-              if (in_array($userid, $following_user_ids)) {
+              if (in_array($user_id, $following_user_ids)) {
 
                 echo " checked";
               }
