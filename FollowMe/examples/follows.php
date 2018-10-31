@@ -103,7 +103,7 @@ while($row = $follow_result->fetch_row()) {
   						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
   						echo			"<div class=\"form-check\">";
   						echo				"<label class=\"form-check-label\">";
-  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"";
+  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
               if (in_array($userid, $following_user_ids)) {
 
