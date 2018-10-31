@@ -92,6 +92,11 @@ while($row = $follow_result->fetch_row()) {
 
               $user_id = $row['user_id'];
 
+              if ($user_id == $userid){
+
+              }
+              else {
+
               echo "<li>";
   						echo	"<div class=\"row\">";
   						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
@@ -119,6 +124,7 @@ while($row = $follow_result->fetch_row()) {
   						echo "</li>";
               echo "<hr />";
 
+              }
             }
 						?>
 
