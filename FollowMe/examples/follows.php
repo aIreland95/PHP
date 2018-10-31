@@ -20,8 +20,7 @@ while($row = $follow_result->fetch_row()) {
 
   $following_user_ids[] = $row[0];
 }
-echo $following_user_ids[0];
-echo $following_user_ids[1];
+
 ?>
 
 <!doctype html>
