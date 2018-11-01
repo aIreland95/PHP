@@ -72,7 +72,7 @@ while($row = $follow_result->fetch_row()) {
                      <a href="follows.php" class="nav-link">Follows</a>
                  </li>
 									<li class="nav-item">
-	                    <a href="#" class="nav-link">
+	                    <a href="profile.php" class="nav-link">
 												<?php echo $_SESSION['email']; ?>
 											</a>
 	                </li>

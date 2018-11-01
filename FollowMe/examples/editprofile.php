@@ -86,7 +86,7 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
                      <a href="follows.php" class="nav-link">Follows</a>
                  </li>
 									<li class="nav-item">
-	                    <a href="#" class="nav-link">
+	                    <a href="profile.php" class="nav-link">
 
 													<?php echo $_SESSION['email']; ?>
 
