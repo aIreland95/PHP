@@ -65,6 +65,12 @@ while($row = $follow_result->fetch_row()) {
 	                <li class="nav-item">
 	                    <a href="login.php" class="nav-link">Login</a>
 	                </li>
+                  <li class="nav-item">
+                     <a href="editprofile.php" class="nav-link">Edit Profile</a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="follows.php" class="nav-link">Follows</a>
+                 </li>
 									<li class="nav-item">
 	                    <a href="#" class="nav-link">
 												<?php echo $_SESSION['email']; ?>
