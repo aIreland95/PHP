@@ -122,6 +122,18 @@ while($row = $follow_result->fetch_row()) {
               }
               echo ">";
 
+              // here, what I was thinking was two new SQL statements, much like our users.php page from a while ago
+
+              // if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
+              // $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
+              // $result = $conn->query($sql); }
+
+              // if (isset($_POST['userid']) && isset($_POST['check'])) {
+              // $sql = "INSERT INTO fm_follows (user_id, following_user_id) VALUES ('$user_id','$following_user_ids')";;
+              // $result = $conn->query($sql); }
+
+              // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
+
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
   						echo			"</div>";
@@ -135,6 +147,7 @@ while($row = $follow_result->fetch_row()) {
 						?>
 
 					</ul>
+          <input type="submit">
 				</div>
 			</div>
 		</div>
