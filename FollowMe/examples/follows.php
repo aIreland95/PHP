@@ -133,6 +133,7 @@ while($row = $follow_result->fetch_row()) {
               // $result = $conn->query($sql); }
 
               // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
+              // javascript is not an option however
 
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
