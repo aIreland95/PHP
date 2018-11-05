@@ -32,8 +32,8 @@ while ($row2 = $result->fetch_assoc()) {
   if ($_POST["$firstName"] == "yes") {
 
   $follow_id = $row2['user_id'];
-  $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
-  $conn->query($sql); }
+  $sql2 = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
+  $conn->query($sql2); }
 
   // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
   // javascript is not an option however
