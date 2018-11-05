@@ -114,7 +114,7 @@ while($row = $follow_result->fetch_row()) {
   						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
   						echo			"<div class=\"form-check\">";
   						echo				"<label class=\"form-check-label\">";
-  						echo					"<input class=\"form-check-input\" name=\" . $row['first_name'] . \" type=\"checkbox\" value=\"yes\"";
+  						echo					"<input class=\"form-check-input\" name=" . $row['first_name'] . " type=\"checkbox\" value=\"yes\"";
 
               if (in_array($user_id, $following_user_ids)) {
 
@@ -133,7 +133,7 @@ while($row = $follow_result->fetch_row()) {
 
                 $follow_id = $row['user_id'];
                 $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
-                $ins_result = $conn->query($sql); }
+                $conn->query($sql); }
 
                 // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
                 // javascript is not an option however
