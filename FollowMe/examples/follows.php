@@ -21,21 +21,23 @@ while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row[0];
 }
 
-/* while ($row = $result->fetch_assoc()) {
+while ($row2 = $result->fetch_assoc()) {
 
- if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
-  $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
-  $del_result = $conn->query($sql); }
+ // if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
+//  $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
+//  $del_result = $conn->query($sql); }
 
-  if ($_POST['first_name'] == "yes") {
+  $firstName = $row2['first_name'];
 
-  $follow_id = $row['user_id'];
+  if ($_POST["$firstName"] == "yes") {
+
+  $follow_id = $row2['user_id'];
   $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
   $conn->query($sql); }
 
   // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
   // javascript is not an option however
-} */
+}
 
 ?>
 
@@ -108,6 +110,7 @@ while($row = $follow_result->fetch_row()) {
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
+            <form method="post" action="">
 						<?php
 
             while($row = $result->fetch_assoc()) {
@@ -148,7 +151,7 @@ while($row = $follow_result->fetch_row()) {
               }
             }
 						?>
-
+          </form>
 					</ul>
           <input type="submit">
 				</div>
