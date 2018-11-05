@@ -30,7 +30,7 @@ while ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $follow_id = $row2['user_id'];
       $sql2 = "DELETE FROM fm_follows WHERE user_id = '$userid' AND following_user_id = '$follow_id'";
-      $conn->query($sql2)
+      $conn->query($sql2);
     }
   }
 }
