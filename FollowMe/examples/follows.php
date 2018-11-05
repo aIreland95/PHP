@@ -21,7 +21,9 @@ while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row[0];
 }
 
-while ($row2 = $result->fetch_assoc()) {
+$sql2 = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
+$result2 = $conn->query($sql2);
+while ($row2 = $result2->fetch_assoc()) {
 
  // if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
 //  $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
