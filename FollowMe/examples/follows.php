@@ -153,9 +153,9 @@ while ($row2 = $result2->fetch_assoc()) {
               }
             }
 						?>
+            <input type="submit">
           </form>
 					</ul>
-          <input type="submit">
 				</div>
 			</div>
 		</div>
