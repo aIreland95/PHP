@@ -21,6 +21,22 @@ while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row[0];
 }
 
+while ($row = $result->fetch_assoc()) {
+
+/*  if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
+  $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
+  $del_result = $conn->query($sql); } */
+
+  if ($_POST['first_name'] == "yes") {
+
+  $follow_id = $row['user_id'];
+  $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
+  $conn->query($sql); }
+
+  // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
+  // javascript is not an option however
+}
+
 ?>
 
 <!doctype html>
@@ -121,24 +137,6 @@ while($row = $follow_result->fetch_row()) {
                 echo " checked";
               }
               echo ">";
-
-              // here, what I was thinking was two new SQL statements, much like our users.php page from a while ago
-              while ($row = $result->fetch_assoc()) {
-
-              /*  if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
-                $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
-                $del_result = $conn->query($sql); } */
-
-                if ($_POST['first_name'] == "yes") {
-
-                $follow_id = $row['user_id'];
-                $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
-                $conn->query($sql); }
-
-                // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
-                // javascript is not an option however
-              }
-
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
   						echo			"</div>";
