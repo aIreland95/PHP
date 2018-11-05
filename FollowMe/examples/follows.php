@@ -21,11 +21,11 @@ while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row[0];
 }
 
-while ($row = $result->fetch_assoc()) {
+/* while ($row = $result->fetch_assoc()) {
 
-/*  if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
+ if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
   $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
-  $del_result = $conn->query($sql); } */
+  $del_result = $conn->query($sql); }
 
   if ($_POST['first_name'] == "yes") {
 
@@ -35,7 +35,7 @@ while ($row = $result->fetch_assoc()) {
 
   // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
   // javascript is not an option however
-}
+} */
 
 ?>
 
