@@ -12,22 +12,27 @@ $userid = $_SESSION['user_id'];
 
 $sql2 = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result2 = $conn->query($sql2);
-while ($row2 = $result2->fetch_assoc()) {
 
- // if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
-//  $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
-//  $del_result = $conn->query($sql); }
+while ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $firstName = $row2['first_name'];
+  while ($row2 = $result2->fetch_assoc()) {
 
-  if ($_POST["$firstName"] == "yes") {
 
-  $follow_id = $row2['user_id'];
-  $sql2 = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
-  $conn->query($sql2); }
+    $firstName = $row2['first_name'];
 
-  // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
-  // javascript is not an option however
+    if ($_POST["$firstName"] == "yes") {
+
+    $follow_id = $row2['user_id'];
+    $sql2 = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
+    $conn->query($sql2); }
+
+    else {
+
+      $follow_id = $row2['user_id'];
+      $sql2 = "DELETE FROM fm_follows WHERE user_id = '$userid' AND following_user_id = '$follow_id'";
+      $conn->query($sql2)
+    }
+  }
 }
 
 $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
