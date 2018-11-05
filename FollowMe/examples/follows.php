@@ -8,6 +8,8 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
+$userid = $_SESSION['user_id'];
+
 $sql2 = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result2 = $conn->query($sql2);
 while ($row2 = $result2->fetch_assoc()) {
@@ -31,7 +33,6 @@ while ($row2 = $result2->fetch_assoc()) {
 $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
 
-$userid = $_SESSION['user_id'];
 $sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
 
 $follow_result = $conn->query($sql);
