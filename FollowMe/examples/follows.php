@@ -114,7 +114,7 @@ while($row = $follow_result->fetch_row()) {
   						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
   						echo			"<div class=\"form-check\">";
   						echo				"<label class=\"form-check-label\">";
-  						echo					"<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
+  						echo					"<input class=\"form-check-input\" name=\" . $row['first_name'] . \" type=\"checkbox\" value=\"yes\"";
 
               if (in_array($user_id, $following_user_ids)) {
 
@@ -123,17 +123,21 @@ while($row = $follow_result->fetch_row()) {
               echo ">";
 
               // here, what I was thinking was two new SQL statements, much like our users.php page from a while ago
+              while ($row = $result->fetch_assoc()) {
 
-              // if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
-              // $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
-              // $result = $conn->query($sql); }
+              /*  if (isset($_POST['userid']) && isset($_POST['uncheck'])) {
+                $sql = "DELETE FROM fm_follows WHERE user_id = " . $_POST['id'] and following_user_id = ...;
+                $del_result = $conn->query($sql); } */
 
-              // if (isset($_POST['userid']) && isset($_POST['check'])) {
-              // $sql = "INSERT INTO fm_follows (user_id, following_user_id) VALUES ('$user_id','$following_user_ids')";;
-              // $result = $conn->query($sql); }
+                if ($_POST['first_name'] == "yes") {
 
-              // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
-              // javascript is not an option however
+                $follow_id = $row['user_id'];
+                $sql = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
+                $ins_result = $conn->query($sql); }
+
+                // one major thing to consider is how to monitor whether a value gets checked or unchecked while a page is running
+                // javascript is not an option however
+              }
 
   						echo					"<span class=\"form-check-sign\"></span>";
   						echo				"</label>";
