@@ -13,10 +13,9 @@ $userid = $_SESSION['user_id'];
 $sql2 = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result2 = $conn->query($sql2);
 
-while ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   while ($row2 = $result2->fetch_assoc()) {
-
 
     $firstName = $row2['first_name'];
 
@@ -24,7 +23,8 @@ while ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $follow_id = $row2['user_id'];
     $sql2 = "INSERT IGNORE INTO fm_follows (user_id, following_user_id) VALUES ('$userid','$follow_id')";
-    $conn->query($sql2); }
+    $conn->query($sql2);
+  }
 
     else {
 
