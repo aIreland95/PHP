@@ -171,7 +171,8 @@ while($row = $follow_result->fetch_row()) {
                             </div>
                         </div>
                     </div>
-                    <div class="tab-content following">
+                  </div>
+                    <div class="tab-content follows">
                       <div class="tab-pane text-center" id="following" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
@@ -203,7 +204,7 @@ while($row = $follow_result->fetch_row()) {
                 </div>
             </div>
         </div>
-    </div>
+      </div>
 	<footer class="footer section-dark">
         <div class="container">
             <div class="row">
