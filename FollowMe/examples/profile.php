@@ -179,7 +179,7 @@ while($row = $follow_result->fetch_row()) {
 
                         $user_id = $row['user_id'];
 
-                        if ($user_id == $userid) {
+                        //if ($user_id == $userid) {
 
                         if (in_array($user_id, $following_user_ids)) {
 
@@ -202,7 +202,7 @@ while($row = $follow_result->fetch_row()) {
               						echo "</li>";
                           echo "<hr />";
                         }
-                      }
+                      //}
             				}
 
           						?>
