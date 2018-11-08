@@ -172,19 +172,11 @@ while($row = $follow_result->fetch_row()) {
                         </div>
                     </div>
                   </div>
-<<<<<<< HEAD
-                    <div class="tab-content following">
-                      <div class="tab-pane text-center" id="following" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-6 ml-auto mr-auto">
-                              <ul class="list-unstyled follows">
-=======
                     <div class="tab-content follows">
                       <div class="tab-pane text-center" id="following" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
->>>>>>> aad2126d1c1343f5860754df7f470eddfba22767
                       <?php
 
                       while($row = $result->fetch_assoc()) {
@@ -208,20 +200,7 @@ while($row = $follow_result->fetch_row()) {
             				}
 
           						?>
-<<<<<<< HEAD
-                          </div>
-                        </div>
-                      </div>
-=======
->>>>>>> aad2126d1c1343f5860754df7f470eddfba22767
-                    </div>
-                </div>
-            </div>
-        </div>
-<<<<<<< HEAD
-=======
-      </div>
->>>>>>> aad2126d1c1343f5860754df7f470eddfba22767
+                    
 	<footer class="footer section-dark">
         <div class="container">
             <div class="row">
@@ -234,7 +213,7 @@ while($row = $follow_result->fetch_row()) {
                 </nav>
                 <div class="credits ml-auto">
                     <span class="copyright">
-                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tem
+                        <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tem
                     </span>
                 </div>
             </div>
