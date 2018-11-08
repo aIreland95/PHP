@@ -165,14 +165,14 @@ while($row = $follow_result->fetch_row()) {
                         </div>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
-
+                      <ul class="list-unstyled follows">
                       <?php
                       while($row = $result->fetch_assoc()) {
 
                         $user_id = $row['user_id'];
 
                         if (in_array($user_id, $following_user_ids)) {
-                          
+
                           echo "<li>";
               						echo	"<div class=\"row\">";
               						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
@@ -187,7 +187,7 @@ while($row = $follow_result->fetch_row()) {
                         }
             				}
           						?>
-                        <button href="follows.php" class="btn btn-warning btn-round">Find Users</button>
+                      </ul>
                     </div>
                 </div>
             </div>
