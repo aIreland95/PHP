@@ -171,8 +171,11 @@ while($row = $follow_result->fetch_row()) {
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane text-center" id="following" role="tabpanel">
-
+                    <div class="tab-content following">
+                      <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
                       <?php
 
                       while($row = $result->fetch_assoc()) {
@@ -196,7 +199,6 @@ while($row = $follow_result->fetch_row()) {
             				}
 
           						?>
-                        <button href="follows.php" class="btn btn-warning btn-round">Find Users</button>
                     </div>
                 </div>
             </div>
