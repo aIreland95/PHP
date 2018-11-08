@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $conn->query($sql2);
     }
   }
+  header('Location: profile.php');
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
