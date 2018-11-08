@@ -165,7 +165,10 @@ while($row = $follow_result->fetch_row()) {
                         </div>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
-                      <ul class="list-unstyled follows">
+                      <div class="row">
+                          <div class="col-md-6 ml-auto mr-auto">
+                            <ul class="list-unstyled follows">
+
                       <?php
                       while($row = $result->fetch_assoc()) {
 
@@ -187,7 +190,10 @@ while($row = $follow_result->fetch_row()) {
                         }
             				}
           						?>
-                      </ul>
+
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
