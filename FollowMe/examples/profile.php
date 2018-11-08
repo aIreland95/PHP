@@ -11,6 +11,19 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
+$userid = $_SESSION['user_id'];
+
+$sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
+$result = $conn->query($sql);
+
+$follow_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
+$follow_result = $conn->query($follow_sql);
+
+while($row = $follow_result->fetch_row()) {
+
+  $following_user_ids[] = $row[0];
+}
+
 ?>
 
 <!doctype html>
@@ -159,8 +172,41 @@ require('database.php');
                         </div>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
-                        <h3 class="text-muted">Not following anyone yet :(</h3>
-                        <button class="btn btn-warning btn-round">Find artists</button>
+
+                      <?php
+
+                      while($row = $result->fetch_assoc()) {
+
+                        $user_id = $row['user_id'];
+
+                        if ($user_id == $userid) {
+
+                        if (in_array($user_id, $following_user_ids)) {
+
+                          echo "<li>";
+              						echo	"<div class=\"row\">";
+              						echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
+              						echo			"<img src=" . $row['image_url'] . " alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
+              						echo		"</div>";
+              						echo		"<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
+              						echo			"<h6>" . $row['first_name'] . " " . $row['last_name'] . "<br/><small>" . $row['title'] . "</small></h6>";
+              						echo		"</div>";
+              						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
+              						echo			"<div class=\"form-check\">";
+              						echo				"<label class=\"form-check-label\">";
+                          echo					"<span class=\"form-check-sign\"></span>";
+              						echo				"</label>";
+              						echo			"</div>";
+              						echo		"</div>";
+              						echo	"</div>";
+              						echo "</li>";
+                          echo "<hr />";
+                        }
+                      }
+            				}
+
+          						?>
+                        <button href="follows.php" class="btn btn-warning btn-round">Find Users</button>
                     </div>
                 </div>
             </div>

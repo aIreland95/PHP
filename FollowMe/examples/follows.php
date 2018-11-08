@@ -89,20 +89,18 @@ while($row = $follow_result->fetch_row()) {
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
-	                <li class="nav-item">
-	                    <a href="login.php" class="nav-link">Login</a>
-	                </li>
-                  <li class="nav-item">
-                     <a href="editprofile.php" class="nav-link">Edit Profile</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="follows.php" class="nav-link">Follows</a>
-                 </li>
-									<li class="nav-item">
-	                    <a href="profile.php" class="nav-link">
-												<?php echo $_SESSION['email']; ?>
-											</a>
-	                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Login</a>
+                </li>
+               <li class="nav-item">
+                   <a href="follows.php" class="nav-link">Follow Users</a>
+               </li>
+               <li class="nav-item">
+                   <a href="profile.php" class="nav-link">Profile</a>
+               </li>
+               <li class="nav-item">
+                  <a href="editprofile.php" class="nav-link">Edit Profile</a>
+              </li>
 	            </ul>
 	        </div>
 		</div>
