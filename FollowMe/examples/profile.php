@@ -179,8 +179,6 @@ while($row = $follow_result->fetch_row()) {
 
                         $user_id = $row['user_id'];
 
-                        //if ($user_id == $userid) {
-
                         if (in_array($user_id, $following_user_ids)) {
 
                           echo "<li>";
@@ -191,18 +189,10 @@ while($row = $follow_result->fetch_row()) {
               						echo		"<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
               						echo			"<h6>" . $row['first_name'] . " " . $row['last_name'] . "<br/><small>" . $row['title'] . "</small></h6>";
               						echo		"</div>";
-              						echo		"<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
-              						echo			"<div class=\"form-check\">";
-              						echo				"<label class=\"form-check-label\">";
-                          echo					"<span class=\"form-check-sign\"></span>";
-              						echo				"</label>";
-              						echo			"</div>";
-              						echo		"</div>";
               						echo	"</div>";
               						echo "</li>";
                           echo "<hr />";
                         }
-                      //}
             				}
 
           						?>
