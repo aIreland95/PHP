@@ -9,12 +9,19 @@ if (!isset($_SESSION)) {
   session_start();
 }
 require('database.php');
+
 $userid = $_SESSION['user_id'];
+
 $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
 $result = $conn->query($sql);
+
 $follow_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
 $follow_result = $conn->query($follow_sql);
+
+$
+
 while($row = $follow_result->fetch_row()) {
+
   $following_user_ids[] = $row[0];
 }
 ?>
@@ -164,7 +171,7 @@ while($row = $follow_result->fetch_row()) {
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                    <div class="tab-pane" id="following" role="tabpanel">
                       <div class="row">
                           <div class="col-md-6 ml-auto mr-auto">
                             <ul class="list-unstyled follows">
