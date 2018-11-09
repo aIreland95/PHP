@@ -1,10 +1,5 @@
 <?php
-// start session
-// uses $_SESSION['email'] to display email in navigation
-// modify fm_users to include image URL, load it to $_SESSION['image_url'];
-// modify the fm_users table to include first_name and last_name
-// modify fm_users to add title, load it to $_SESSION['title'];
-// modify fm_users to add description, load it to $_SESSION['description'];
+
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -127,43 +122,35 @@ while($row = $follow_result->fetch_row()) {
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                            </div>
-                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
-                                                <h6>Flume<br/><small>Musical Producer</small></h6>
-                                            </div>
-                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
-												<div class="form-check">
-					                                <label class="form-check-label">
-					                                    <input class="form-check-input" type="checkbox" value="" checked>
-					                                    <span class="form-check-sign"></span>
-					                                </label>
-					                            </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <hr />
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-2 ml-auto mr-auto ">
-                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                            </div>
-                                            <div class="col-md-7 col-sm-4">
-                                                <h6>Banks<br /><small>Singer</small></h6>
-                                            </div>
-                                            <div class="col-md-3 col-sm-2">
-												<div class="form-check">
-					                                <label class="form-check-label">
-					                                    <input class="form-check-input" type="checkbox" value="">
-					                                    <span class="form-check-sign"></span>
-					                                </label>
-					                            </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                  <?php
+
+                                    $following_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
+                                    $following_result = $conn->query($following_sql);
+
+                                    while($row = $following_result->fetch_row()) {
+                                      $user_ids[] = $row2[0];
+                                    }
+
+                                    while($row2 = $result->fetch_assoc()) {
+
+                                      $following_userid = $row['user_id'];
+
+                                      if (in_array($following_userid, $user_ids)) {
+                                        echo "<li>";
+                                        echo	"<div class=\"row\">";
+                                        echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-0\">";
+                                        echo			"<img src=" . $row['image_url'] . " alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
+                                        echo		"</div>";
+                                        echo		"<div class=\"col-md-7 col-sm-4  ml-0 mr-0\">";
+                                        echo			"<h6>" . $row['first_name'] . " " . $row['last_name'] . "<br/><small>" . $row['title'] . "</small></h6>";
+                                        echo		"</div>";
+                                        echo	"</div>";
+                                        echo "</li>";
+                                        echo "<hr />";
+                                      }
+                                  }
+
+                                  ?>
                                 </ul>
                             </div>
                         </div>
@@ -175,7 +162,9 @@ while($row = $follow_result->fetch_row()) {
 
                       <?php
                       while($row = $result->fetch_assoc()) {
+
                         $user_id = $row['user_id'];
+
                         if (in_array($user_id, $following_user_ids)) {
                           echo "<li>";
               						echo	"<div class=\"row\">";
