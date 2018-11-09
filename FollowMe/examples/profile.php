@@ -24,9 +24,9 @@ while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row['user_id'];
 }
 
-while($row = $followU_result->fetch_row()) {
+/* while($row = $followU_result->fetch_row()) {
   $user_ids[] = $row['following_user_id'];
-}
+} */
 
 ?>
 
