@@ -22,11 +22,7 @@ $followU_result = $conn->query($followU_sql);
 
 while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row[0];
-}
-
-while($row = $followU_result->fetch_row()) {
-  $user_id[] = $row[0];
-}
+};
 
 ?>
 
@@ -136,9 +132,17 @@ while($row = $followU_result->fetch_row()) {
                                 <ul class="list-unstyled follows">
 
                                 <?php
-                                  /*while($row = $result->fetch_assoc()) {
 
-                                    $following_user_ids = $row['following_user_id'];
+                                $followU_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
+                                $followU_result = $conn->query($followU_sql);
+
+                                while($row = $followU_result->fetch_row()) {
+                                  $following_user_ids[] = $row[0];
+                                }
+
+                                  while($row = $result->fetch_assoc()) {
+
+                                    $user_id = $row['user_id'];
 
                                     if (in_array($user_id, $following_user_ids)) {
 
@@ -154,7 +158,7 @@ while($row = $followU_result->fetch_row()) {
                           						echo "</li>";
                                       echo "<hr />";
                                     }
-                        				} */
+                        				}
                       						?>
 
                                 </ul>
