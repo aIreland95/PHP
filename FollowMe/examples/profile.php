@@ -133,7 +133,7 @@ while($row = $follow_result->fetch_row()) {
 
                                     while($row2 = $following_result->fetch_assoc()) {
 
-                                      $following_userid = $row['user_id'];
+                                      $following_userid = $row2['user_id'];
 
                                       if (in_array($following_userid, $user_ids)) {
                                         echo "<li>";
