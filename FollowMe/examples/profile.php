@@ -25,7 +25,7 @@ while($row = $follow_result->fetch_row()) {
  $followU_result = $conn->query($followU_sql);
 
  while($row = $followU_result->fetch_row()) {
-  $user_ids[] = $row['following_user_id'];
+  $user_ids[] = $row[0];
 }
 
 ?>
