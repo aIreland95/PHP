@@ -1,18 +1,13 @@
 <?php
-// start session
-// uses $_SESSION['email'] to display email in navigation
-// modify fm_users to include image URL, load it to $_SESSION['image_url'];
-// modify the fm_users table to include first_name and last_name
-// modify fm_users to add title, load it to $_SESSION['title'];
-// modify fm_users to add description, load it to $_SESSION['description'];
+
 if (!isset($_SESSION)) {
   session_start();
 }
 require('database.php');
 $userid = $_SESSION['user_id'];
 
-$sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
-$result = $conn->query($sql);
+// $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
+// $result = $conn->query($sql);
 
 $follow_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
 $follow_result = $conn->query($follow_sql);
