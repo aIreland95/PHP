@@ -21,11 +21,11 @@ $followU_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$useri
 $followU_result = $conn->query($followU_sql);
 
 while($row = $follow_result->fetch_row()) {
-  $following_user_ids[] = $row[0];
+  $following_user_ids[] = $row['user_id'];
 }
 
 while($row = $followU_result->fetch_row()) {
-  $user_ids[] = $row[0];
+  $user_ids[] = $row['following_user_id'];
 }
 
 ?>
