@@ -127,13 +127,13 @@ while($row = $follow_result->fetch_row()) {
                                     $following_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
                                     $following_result = $conn->query($following_sql);
 
-                                    while($row2 = $following_result->fetch_row()) {
-                                      $user_ids[] = $row2[0];
+                                    while($row = $following_result->fetch_row()) {
+                                      $user_ids[] = $row[0];
                                     }
 
-                                    while($row2 = $following_result->fetch_assoc()) {
+                                    while($row = $following_result->fetch_assoc()) {
 
-                                      $following_userid = $row2['user_id'];
+                                      $following_userid = $row['user_id'];
 
                                       if (in_array($following_userid, $user_ids)) {
                                         echo "<li>";
