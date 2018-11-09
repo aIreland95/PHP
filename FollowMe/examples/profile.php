@@ -142,9 +142,9 @@ while($row = $follow_result->fetch_row()) {
 
                                   while($row = $result->fetch_assoc()) {
 
-                                    $user_id = $row['user_id'];
+                                    $following_userid = $row['following_user_id'];
 
-                                    if (in_array($user_id, $following_user_ids)) {
+                                    if (in_array($user_id, $following_user_id)) {
 
                                       echo "<li>";
                           						echo	"<div class=\"row\">";
