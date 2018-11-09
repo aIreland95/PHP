@@ -137,8 +137,7 @@ while($row = $followU_result->fetch_row()) {
 
                                 <?php
 
-
-                                  while($row = $result->fetch_assoc()) {
+                                /*  while($row = $result->fetch_assoc()) {
 
                                     $following_userid = $row['following_user_id'];
 
@@ -156,7 +155,7 @@ while($row = $followU_result->fetch_row()) {
                           						echo "</li>";
                                       echo "<hr />";
                                     }
-                        				}
+                        				} */
                       						?>
 
                                 </ul>
