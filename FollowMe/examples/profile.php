@@ -163,7 +163,7 @@ $result = $conn->query($sql);
                         $following_user_ids[] = $row2[0];
                       }
 
-                      while($row2 = $result->fetch_assoc()) {
+                      while($row2 = $follow_result->fetch_assoc()) {
 
                         $user_id = $row2['user_id'];
 
