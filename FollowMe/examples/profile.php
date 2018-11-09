@@ -124,10 +124,10 @@ $userid = $_SESSION['user_id'];
 
                                 <?php
 
-                                $sql = "SELECT following_user_id FROM fm_follows WHERE following_user_id = '$userid'";
-                                $result = $conn->query($sql);
+                                $sql_followers = "SELECT following_user_id FROM fm_follows WHERE following_user_id = '$userid'";
+                                $followers_result = $conn->query($sql_followers);
 
-                                while($row = $result->fetch_assoc()) {
+                                while($row = $followers_result->fetch_assoc()) {
 
                                       echo "<li>";
                           						echo	"<div class=\"row\">";
@@ -155,10 +155,10 @@ $userid = $_SESSION['user_id'];
 
                       <?php
 
-                      $sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
-                      $result = $conn->query($sql);
+                      $sql_following = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
+                      $following_result = $conn->query($following_sql);
 
-                      while($row = $result->fetch_assoc()) {
+                      while($row = $following_result->fetch_assoc()) {
 
                         //if (in_array($user_id, $following_user_ids)) {
 
