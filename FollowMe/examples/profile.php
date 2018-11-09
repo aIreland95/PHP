@@ -109,7 +109,7 @@ while($row = $follow_result->fetch_row()) {
                     <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Followers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
