@@ -17,8 +17,8 @@ $result = $conn->query($sql);
 $follow_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
 $follow_result = $conn->query($follow_sql);
 
-$followU_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
-$followU_result = $conn->query($followU_sql);
+// $followU_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
+// $followU_result = $conn->query($followU_sql);
 
 while($row = $follow_result->fetch_row()) {
   $following_user_ids[] = $row['user_id'];
