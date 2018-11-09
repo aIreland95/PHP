@@ -127,7 +127,7 @@ while($row = $follow_result->fetch_row()) {
                                     $following_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
                                     $following_result = $conn->query($following_sql);
 
-                                    while($row = $following_result->fetch_row()) {
+                                    while($row2 = $following_result->fetch_row()) {
                                       $user_ids[] = $row2[0];
                                     }
 
