@@ -143,7 +143,7 @@ $result = $conn->query($sql);
                                         echo "<hr />";
                                       }
                                   }
-                                  $conn->close();
+                                  
                                   ?>
                                 </ul>
                             </div>
@@ -181,7 +181,6 @@ $result = $conn->query($sql);
                           echo "<hr />";
                         }
             				}
-                    $conn->close();
           						?>
 
                           </ul>
