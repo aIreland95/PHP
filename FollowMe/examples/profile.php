@@ -131,7 +131,7 @@ while($row = $follow_result->fetch_row()) {
                                       $user_ids[] = $row2[0];
                                     }
 
-                                    while($row2 = $result->fetch_assoc()) {
+                                    while($row2 = $following_result->fetch_assoc()) {
 
                                       $following_userid = $row['user_id'];
 
