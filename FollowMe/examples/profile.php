@@ -135,8 +135,8 @@ while($row = $followU_result->fetch_row()) {
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
 
-                                  <?php
-                                  while($row = $result->fetch_assoc()) {
+                                <?php
+                                  /*while($row = $result->fetch_assoc()) {
 
                                     $following_user_ids = $row['following_user_id'];
 
@@ -154,7 +154,7 @@ while($row = $followU_result->fetch_row()) {
                           						echo "</li>";
                                       echo "<hr />";
                                     }
-                        				}
+                        				} */
                       						?>
 
                                 </ul>
