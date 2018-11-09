@@ -124,11 +124,10 @@ $userid = $_SESSION['user_id'];
 
                                 <?php
 
+                                $sql = "SELECT following_user_id FROM fm_follows WHERE following_user_id = '$userid'";
+                                $result = $conn->query($sql);
+
                                 while($row = $result->fetch_assoc()) {
-
-                                    $following_userid = $row['following_user_id'];
-
-                                    if (in_array($following_userid, $user_ids)) {
 
                                       echo "<li>";
                           						echo	"<div class=\"row\">";
@@ -141,7 +140,7 @@ $userid = $_SESSION['user_id'];
                           						echo	"</div>";
                           						echo "</li>";
                                       echo "<hr />";
-                                    }
+
                         				}
                       						?>
 
