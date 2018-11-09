@@ -6,14 +6,8 @@ if (!isset($_SESSION)) {
 require('database.php');
 $userid = $_SESSION['user_id'];
 
-// $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
-// $result = $conn->query($sql);
-
-
-
- $followU_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
- $followU_result = $conn->query($followU_sql);
-
+$sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
+$result = $conn->query($sql);
 
 ?>
 
