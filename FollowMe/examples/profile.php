@@ -118,7 +118,7 @@ $result = $conn->query($sql);
                                 <ul class="list-unstyled follows">
                                   <?php
 
-                                    include 'following.php';
+                                    //include 'following.php';
 
                                   ?>
                                 </ul>
