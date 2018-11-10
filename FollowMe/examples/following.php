@@ -9,9 +9,9 @@ while($row = $following_result->fetch_row()) {
 
 while($row = $result->fetch_assoc()) {
 
-  $following_userid = $row['following_user_id'];
+  $userid = $row['user_id'];
 
-  if (in_array($following_userid, $user_ids)) {
+  if (in_array($userid, $user_ids)) {
     echo "<li>";
     echo	"<div class=\"row\">";
     echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-0\">";
