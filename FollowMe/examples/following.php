@@ -1,17 +1,17 @@
 <?php
 
-$following_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
-$following_result = $conn->query($following_sql);
+$follow_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
+$follow_result = $conn->query($follow_sql);
 
-while($row = $following_result->fetch_row()) {
-  $user_ids[] = $row[0];
+while($row = $follow_result->fetch_row()) {
+  $following_user_ids[] = $row[0];
 }
 
-while($row = $result->fetch_assoc()) {
+while($row = $follow_result->fetch_assoc()) {
 
-  $userid = $row['user_id'];
+  $user_id = $row['user_id'];
 
-  if (in_array($userid, $user_ids)) {
+  if (in_array($user_id, $following_user_ids)) {
     echo "<li>";
     echo	"<div class=\"row\">";
     echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-0\">";
