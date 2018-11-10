@@ -127,9 +127,9 @@ $result = $conn->query($sql);
 
                                   while($row = $result->fetch_assoc()) {
 
-                                    $fuserid = $row['following_user_id'];
+                                    $follower_userid = $row['user_id'];
 
-                                    if (in_array($fuserid, $user_ids)) {
+                                    if (in_array($follower_userid, $user_ids)) {
                                       echo "<li>";
                                       echo	"<div class=\"row\">";
                                       echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-0\">";
