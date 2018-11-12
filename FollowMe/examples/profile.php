@@ -159,14 +159,14 @@ $result = $conn->query($sql);
                               $following_result = $conn->query($following_sql);
 
                               while($row = $following_result->fetch_row()) {
-                                $user_ids[] = $row[0];
+                                $following_user_ids[] = $row[0];
                               }
 
                               while($row = $result->fetch_assoc()) {
 
-                                $follower_userid = $row['user_id'];
+                                $user_id = $row['user_id'];
 
-                                if (in_array($follower_userid, $user_ids)) {
+                                if (in_array($user_id, $following_user_ids)) {
                                   echo "<li>";
                                   echo	"<div class=\"row\">";
                                   echo		"<div class=\"col-md-2 col-sm-2 ml-auto mr-0\">";
