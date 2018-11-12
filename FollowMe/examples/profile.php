@@ -153,9 +153,9 @@ $result = $conn->query($sql);
                       <div class="row">
                           <div class="col-md-6 ml-auto mr-auto">
                             <ul class="list-unstyled follows">
-                              <?php 
+                              <?php
 
-                              $following_sql = "SELECT user_id FROM fm_follows WHERE following_user_id = '$userid'";
+                              $following_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
                               $following_result = $conn->query($following_sql);
 
                               while($row = $following_result->fetch_row()) {
