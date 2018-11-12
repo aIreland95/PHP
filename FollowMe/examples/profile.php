@@ -125,7 +125,7 @@ $result = $conn->query($sql);
                                     $user_ids[] = $row[0];
                                   }
 
-                                  /*while($row = $result->fetch_assoc()) {
+                                  while($row = $result->fetch_assoc()) {
 
                                     $follower_userid = $row['user_id'];
 
@@ -142,7 +142,7 @@ $result = $conn->query($sql);
                                       echo "</li>";
                                       echo "<hr />";
                                     }
-                                  } */
+                                  }
 
                                   ?>
                                 </ul>
@@ -154,6 +154,9 @@ $result = $conn->query($sql);
                           <div class="col-md-6 ml-auto mr-auto">
                             <ul class="list-unstyled follows">
                               <?php
+
+                              $sql = "SELECT user_id, first_name, last_name, title, image_url FROM fm_users";
+                              $result = $conn->query($sql);
 
                               $following_sql = "SELECT following_user_id FROM fm_follows WHERE user_id = '$userid'";
                               $following_result = $conn->query($following_sql);
