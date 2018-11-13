@@ -146,7 +146,7 @@ if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="file" name="image" class="form-control" placeholder="Image URL" value="<?php echo $_SESSION['image_url'] ?>">
+                              <input type="file" name="upload" class="form-control" placeholder="Image URL" value="<?php echo $_SESSION['image_url'] ?>">
                             </div>
 
                             <label>Title:</label>
