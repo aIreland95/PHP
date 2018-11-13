@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if (!file_exists("uploads/" . $_SESSION['user_id'])) {
-  mkdir("uploads/" . $_SESSION['user_id']);
+if (!file_exists("./uploads/" . $_SESSION['user_id'])) {
+  mkdir("./uploads/" . $_SESSION['user_id']);
 }
 
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
