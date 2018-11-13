@@ -9,26 +9,26 @@ require('database.php');
 
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null && $_POST['image_url'] != null) {
+if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null /* && $_POST['image_url'] != null */) {
 
     $email = $_SESSION['email'];
     $firstname = $_POST['first_name'];
     $lastname = $_POST['last_name'];
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $image = $_POST['image_url']; // latest addition
+  //  $image = $_POST['image_url']; // latest addition
 
-if (isset($_FILES['faces'])) {
-    if (!file_exists("../assets/img/faces/". $_SESSION['user_id'])) {
-      mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777, true);
-    }
+// if (isset($_FILES['faces'])) {
+//     if (!file_exists("../assets/img/faces/". $_SESSION['user_id'])) {
+//       mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777, true);
+//     }
+//
+//     $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
+//     $target_file = $target_dir . basename($_FILES['faces']['user_id']);
+//     $uploadVerify = true;
+//   }
 
-    $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
-    $target_file = $target_dir . basename($_FILES['faces']['user_id']);
-    $uploadVerify = true;
-  }
-
-    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', image_url = '$image', title = '$title', description = '$description' WHERE email = '$email'";
+    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', /* image_url = , */ title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
 
     $sql2 = "SELECT * FROM fm_users where email = '$email'";
@@ -38,7 +38,7 @@ if (isset($_FILES['faces'])) {
 
       $_SESSION['first_name'] = $row['first_name'];
       $_SESSION['last_name'] = $row['last_name'];
-      $_SESSION['image_url'] = $row['image_url']; // latest addition
+    //  $_SESSION['image_url'] = $row['image_url']; // latest addition
       $_SESSION['title'] = $row['title'];
       $_SESSION['description'] = $row['description'];
     }
