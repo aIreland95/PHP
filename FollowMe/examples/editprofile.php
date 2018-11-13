@@ -17,7 +17,7 @@ if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_
 
       //if uploads folder doesn't exist, create it
       mkdir("./uploads");
-  }
+  } 
 
   if (!file_exists("uploads/" . $_SESSION['user_id'])) {
     mkdir("uploads/" . $_SESSION['user_id'], 0777, true);
