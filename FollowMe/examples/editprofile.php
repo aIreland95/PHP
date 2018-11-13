@@ -16,8 +16,9 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $lastname = $_POST['last_name'];
     $title = $_POST['title'];
     $description = $_POST['description'];
+    $image = $_POST['image_url']; // latest addition
 
-    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' WHERE email = '$email'";
+    $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', image_url = '$image', title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
 
     $sql2 = "SELECT * FROM fm_users where email = '$email'";
@@ -27,6 +28,7 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $_SESSION['first_name'] = $row['first_name'];
       $_SESSION['last_name'] = $row['last_name'];
+      $_SESSION['image_url'] = $row['image_url']; // latest addition
       $_SESSION['title'] = $row['title'];
       $_SESSION['description'] = $row['description'];
     }
@@ -127,6 +129,14 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                 </div>
                             </div> <!-- ends the first row -->
+
+                            <label>Image URL:</label> <!-- latest addition -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="nc-icon nc-tag-content"></i>
+                              </span>
+                              <input type="text" name="title" class="form-control" placeholder="Image URL" value="<?php echo $_SESSION['image_url'] ?>">
+                            </div>
 
                             <label>Title:</label>
                             <div class="input-group">
