@@ -145,7 +145,7 @@ if (isset($_FILES['faces'])) {
                               <span class="input-group-addon">
                                 <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input type="text" name="title" class="form-control" placeholder="Image URL" value="<?php echo $_SESSION['image_url'] ?>">
+                              <input type="file" name="image" class="form-control" placeholder="Image URL" value="<?php echo $_SESSION['image_url'] ?>">
                             </div>
 
                             <label>Title:</label>
