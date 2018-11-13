@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if (!file_exists("../assets/img/faces/". $_SESSION['user_id'])) {
+if (!file_exists("../assets/img/faces/" . $_SESSION['user_id'])) {
   mkdir("../assets/img/faces/" . $_SESSION['user_id']);
 }
 
