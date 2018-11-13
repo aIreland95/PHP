@@ -21,6 +21,7 @@ $password = $_POST['password'];
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql = "INSERT INTO fm_users (email,password) VALUES ('$email','$password')";
 $conn->query($sql);
+mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777, true);
 
 header('Location: login.php');
 }
