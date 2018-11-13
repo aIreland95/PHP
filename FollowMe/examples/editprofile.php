@@ -117,7 +117,7 @@ if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_
                     <div class="col-md-8 ml-auto mr-auto">
                       <!-- ml-auto and mr-auto automatically move the div ogjects -->
                         <h2 class="text-center">Edit Profile</h2>
-                        <form class="contact-form" action="" method="post">
+                        <form class="contact-form" action="" method="post" enctype="multipart/form-data">
                             <div class="row">
                               <!-- col-md-6 designates the amount of spaces used in the 12 space grid that is used -->
                                 <div class="col-md-6">
