@@ -5,19 +5,24 @@ if (!isset($_SESSION)) {
   session_start();
 }
 require('database.php');
+
 if (isset($_FILES['upload'])) {
+
   if (!file_exists("uploads")) {
+
     mkdir("uploads");
   }
   if (!file_exists("uploads/" . $_SESSION['user_id'])) {
+
     mkdir("uploads/" . $_SESSION['user_id']);
   }
+
   $target_dir = "uploads/" . $_SESSION['username'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 }
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
-  
+
 if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
       // $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
       // $target_file = $target_dir . basename($_FILES['faces']['user_id']);
@@ -28,7 +33,7 @@ if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_
     $title = $_POST['title'];
     $description = $_POST['description'];
     $image = $_POST['image_url']; // latest addition
-    \
+
     $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', image_url = '$image', title = '$title', description = '$description' WHERE email = '$email'";
     $conn->query($sql);
 
