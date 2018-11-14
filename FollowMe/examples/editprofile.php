@@ -23,6 +23,7 @@ if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
 
+    $_POST['image_url'] = $target_file;
 
     $email = $_SESSION['email'];
     $firstname = $_POST['first_name'];
