@@ -13,7 +13,7 @@ require('database.php');
 
   if (!file_exists("../assets/img/faces/" . $_SESSION['user_id'])) {
 
-    mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777);
+    mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777, true);
   }
 
   $target_dir = "../assets/img/faces/" . $_SESSION['username'] . "/";
