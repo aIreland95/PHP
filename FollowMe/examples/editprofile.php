@@ -6,17 +6,12 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-  // if (!file_exists("images")) {
-  //
-  //   mkdir("./images", 0777);
-  // }
-
   if (!file_exists("../assets/img/faces/" . $_SESSION['user_id'])) {
 
     mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777, true);
   }
 
-  $target_dir = "../assets/img/faces/" . $_SESSION['username'] . "/";
+  $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 
@@ -47,6 +42,9 @@ if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_
       $_SESSION['description'] = $row['description'];
     }
       header('Location: profile.php');
+  }
+  if ($uploadVerify) {
+  move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
   }
 }
 ?>
