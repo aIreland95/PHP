@@ -11,7 +11,7 @@ if (isset($_FILES['upload'])) {
 
   if (!file_exists("uploads")) {
     mkdir("uploads");
-  }
+  } 
 
   if (!file_exists("uploads/" . $_SESSION['user_id'])) {
     mkdir("uploads/" . $_SESSION['user_id']);
