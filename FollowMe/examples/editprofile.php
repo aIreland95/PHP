@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if (isset($_FILES['upload'])) {
+// if (isset($_FILES['upload'])) {
 
   if (!file_exists("uploads")) {
     mkdir("uploads");
@@ -21,7 +21,7 @@ if (isset($_FILES['upload'])) {
   //$target_file = $target_dir . basename($_FILES['upload']['name']);
   //$uploadVerify = true;
 
-}
+// }
 
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
