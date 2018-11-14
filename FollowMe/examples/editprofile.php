@@ -6,16 +6,17 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-  if (!file_exists("images")) {
+  // if (!file_exists("images")) {
+  //
+  //   mkdir("./images", 0777);
+  // }
 
-    mkdir("./images", 0777);
+  if (!file_exists("../assets/img/faces/" . $_SESSION['user_id'])) {
+
+    mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777);
   }
-  if (!file_exists("images/" . $_SESSION['user_id'])) {
 
-    mkdir("images/" . $_SESSION['user_id'], 0777);
-  }
-
-  $target_dir = "uploads/" . $_SESSION['username'] . "/";
+  $target_dir = "../assets/img/faces/" . $_SESSION['username'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 
