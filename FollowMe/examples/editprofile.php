@@ -7,12 +7,20 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if (!file_exists("uploads")) {
-  mkdir("uploads");
-}
+if (isset($_FILES['upload'])) {
 
-if (!file_exists("uploads/" . $_SESSION['user_id'])) {
-  mkdir("uploads/" . $_SESSION['user_id']);
+  if (!file_exists("uploads")) {
+    mkdir("uploads");
+  }
+
+  if (!file_exists("uploads/" . $_SESSION['user_id'])) {
+    mkdir("uploads/" . $_SESSION['user_id']);
+  }
+
+  $target_dir = "uploads/" . $_SESSION['username'] . "/";
+  $target_file = $target_dir . basename($_FILES['upload']['name']);
+  $uploadVerify = true;
+
 }
 
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
