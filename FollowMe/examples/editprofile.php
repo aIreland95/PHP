@@ -6,9 +6,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-if (isset($_FILES['upload'])) {
-
-  if (!file_exists("uploads")) {
+//  if (!file_exists("uploads")) {
 
     mkdir("uploads");
   }
@@ -20,13 +18,12 @@ if (isset($_FILES['upload'])) {
   $target_dir = "uploads/" . $_SESSION['username'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
-}
+
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
-      // $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
-      // $target_file = $target_dir . basename($_FILES['faces']['user_id']);
-      // $uploadVerify = true;
+
+
     $email = $_SESSION['email'];
     $firstname = $_POST['first_name'];
     $lastname = $_POST['last_name'];
