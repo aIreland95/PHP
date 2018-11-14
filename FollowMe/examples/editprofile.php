@@ -6,13 +6,13 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-  if (!file_exists("uploads")) {
+  if (!file_exists("images")) {
 
-    mkdir("uploads");
+    mkdir("./images", 0777);
   }
-  if (!file_exists("uploads/" . $_SESSION['user_id'])) {
+  if (!file_exists("images/" . $_SESSION['user_id'])) {
 
-    mkdir("uploads/" . $_SESSION['user_id']);
+    mkdir("images/" . $_SESSION['user_id'], 0777);
   }
 
   $target_dir = "uploads/" . $_SESSION['username'] . "/";
