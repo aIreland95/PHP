@@ -9,15 +9,11 @@ require('database.php');
 
 if (isset($_FILES['upload'])) {
 
-  if (!file_exists("uploads")) {
-    mkdir("uploads");
-  } 
-
-  if (!file_exists("uploads/" . $_SESSION['user_id'])) {
-    mkdir("uploads/" . $_SESSION['user_id']);
+  if (!file_exists("../assets/img/faces/" . $_SESSION['user_id'])) {
+    mkdir("../assets/img/faces/" . $_SESSION['user_id'], 0777);
   }
 
-  $target_dir = "uploads/" . $_SESSION['username'] . "/";
+  $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
   $uploadVerify = true;
 
