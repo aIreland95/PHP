@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 require('database.php');
 
-//  if (!file_exists("uploads")) {
+  if (!file_exists("uploads")) {
 
     mkdir("uploads");
   }
