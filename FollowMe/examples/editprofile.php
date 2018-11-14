@@ -17,19 +17,15 @@ if (isset($_FILES['upload'])) {
     mkdir("uploads/" . $_SESSION['user_id'], 0777);
   }
 
-  $target_dir = "uploads/" . $_SESSION['user_id'] . "/";
-  $target_file = $target_dir . basename($_FILES['upload']['name']);
-  $uploadVerify = true;
+  //$target_dir = "uploads/" . $_SESSION['user_id'] . "/";
+  //$target_file = $target_dir . basename($_FILES['upload']['name']);
+  //$uploadVerify = true;
 
 }
 
 if (isset($_SESSION['email']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if (isset($_POST['update-btn']) && $_POST['first_name'] != null && $_POST['last_name'] != null && $_POST['title'] != null && $_POST['description'] != null) {
-
-      // $target_dir = "../assets/img/faces/" . $_SESSION['user_id'] . "/";
-      // $target_file = $target_dir . basename($_FILES['faces']['user_id']);
-      // $uploadVerify = true;
 
     $email = $_SESSION['email'];
     $firstname = $_POST['first_name'];
